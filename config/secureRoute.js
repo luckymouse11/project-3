@@ -1,0 +1,24 @@
+import jwt from 'jsonwebtoken'
+import { secret } from './environment.js'
+import User from '../models/user.js'
+
+export const secureRoute = async (req, res, next) => {
+  try {
+    if (!req.headers.authorization) throw new Error('Missing headers')
+    console.log(req.headers.authorization)
+    const token = req.headers.authorization.replace('Bearer ', '')
+    console.log('Token', token)
+    const payload = jwt.verify(token, secret)
+    console.log('number3 why no show!!!!!!!!!!')
+    const userToVerify = await User.findById(payload.sub)
+    console.log('number4')
+    if (!userToVerify) throw new Error('User not found')
+    console.log('number5')
+    req.currentUser = userToVerify
+    console.log('number6')
+    next()
+  } catch (err) {
+    console.log(err)
+    return res.status(401).json({ message: 'Unauthorised, buddy' })
+  }
+}
