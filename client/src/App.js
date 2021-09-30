@@ -10,8 +10,8 @@ import Register from './components/auth/Register'
 
 import User from './components/user/User'
 
-import Recipes from './components/recipes/Recipes'
-import Recipe from './components/recipes/Recipe'
+import RecipeIndex from './components/recipes/RecipeIndex'
+import RecipeShow from './components/recipes/RecipeShow'
 
 import AddRecipe from './components/recipes/AddRecipe'
 
@@ -30,10 +30,10 @@ function App() {
           <AddRecipe />
         </Route>
         <Route exact path='/recipes'>
-          <Recipes />
+          <RecipeIndex />
         </Route>
         <Route path='/recipes/:id'>
-          <Recipe />
+          <RecipeShow />
         </Route>
         <Route path='/register'>
           <Register />
