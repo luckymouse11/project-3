@@ -80,8 +80,8 @@ export const addComment = async (req, res) => {
   try {
     const recipe = await Recipe.findById(id)                        // Find recipe with id in params
     if (!recipe) throw new Error()
-    const newComment = { ...req.body, owner: req.currentUser._id } // Create review based on req.body and req.currentUser
-    recipe.comments.push(newComment)                                 // Pushing review to the comments array on the recipe document
+    const newComment = { ...req.body, owner: req.currentUser._id } // Create comment based on req.body and req.currentUser
+    recipe.comments.push(newComment)                                 // Pushing comment to the comments array on the recipe document
     await recipe.save()                                            // Saving the recipe document
     return res.status(200).json(recipe)                            // Return recipe to user
   } catch (err) {
@@ -99,13 +99,13 @@ export const deleteComment = async (req, res) => {
     const recipe = await Recipe.findById(id)
     if (!recipe) throw new Error('Recipe not found')
     const commentToDelete = recipe.comments.id(commentId)
-    if (!commentToDelete) throw new Error('Review not found')
+    if (!commentToDelete) throw new Error('Comment not found')
     if (!commentToDelete.owner.equals(req.currentUser._id) && !recipe.owner.equals(req.currentUser._id)) throw new Error('Unauthorised')
     await commentToDelete.remove()
     await recipe.save()
     return res.sendStatus(204)
   } catch (err) {
-    console.log('Review not deleted!')
+    console.log('Comment not deleted!')
     console.log(err.message)
     return res.status(404).json(err.message)
   }

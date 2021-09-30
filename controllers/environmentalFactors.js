@@ -6,7 +6,7 @@ export const getAllFactors = async (req, res) => {
   return res.status(200).json(factors)
 }
 
-// GET /factors/:id
+// GET /environmentalfactors/:id
 // Return a single factors based on their ID
 export const getSingleFactor = async (req, res) => {
   try {
@@ -16,6 +16,6 @@ export const getSingleFactor = async (req, res) => {
     return res.status(200).json(factor)
   } catch (err) {
     console.log(err)
-    return res.status(404).json({ message: 'Factor not found', errors: err })
+    return res.status(404).json({ message: 'Environmental factor not found', errors: err })
   }
 }
