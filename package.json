@@ -6,7 +6,7 @@
   "author": "Victor Liew <victorliew0711@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "npx nodemon indes.js",
+    "serve": "npx nodemon index.js",
     "seed": "node db/seeds.js"
   },
   "type": "module",
