@@ -47,12 +47,12 @@ const seedDatabase = async () => {
 
     // Close connection to mongodb
     await mongoose.connection.close()
-    console.log('👋🏽 baaaaiiiiii')
+    console.log('👋🏽 Connection closed')
   } catch (err) {
-    console.log('🚨 Something went wrong......')
+    console.log('🚨 Something went wrong...')
     console.log(err)
     await mongoose.connection.close()
-    console.log('👋🏽 baaaaiiiiii')
+    console.log('👋🏽 Connection closed')
   }
 }
 
