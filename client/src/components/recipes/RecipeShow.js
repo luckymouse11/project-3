@@ -14,7 +14,7 @@ const RecipeShow = ({ growingTree }) => {
   useEffect(() => {
     const getRecipe = async () => {
       try {
-        const { data } = await axios('https://ga-cheesebored.herokuapp.com/cheeses')
+        const { data } = await axios('/recipes/:id')
         setRecipe(data)
       } catch (err) {
         setHasError(true)

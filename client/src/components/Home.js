@@ -5,10 +5,10 @@ const Home = () => {
   return (
     <div className="hero text-center flex-grow-1 flex-grow-1 d-flex flex-column justify-content-center align-items-center">
       <h1 className="display-4">
-        <span>🧀</span> Cheesebored <span>🧀</span>
+        <span>GREEN PLATE</span>
       </h1>
-      <p className="lead">This site has information about cheeses from all across the world.</p>
-      <Link to="/recipes" className="btn btn-dark">Explore cheeses</Link>
+      <p className="lead">Site info!</p>
+      <Link to="/recipes" className="btn btn-dark">Explore recipes</Link>
     </div>
   )
 }
