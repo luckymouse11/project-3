@@ -35,7 +35,7 @@ const RecipeIndex = ({ growingTree }) => {
             {hasError ? 
               <h2 className="display-5 text-center">Oh! Something went wrong</h2> 
               : 
-              <img className="growingTree" src={growingTree} alt="GrowingTree gif" />
+              <img className="growingTree" src={growingTree} alt="GrowingvTree gif" />
             }
           </>
         }
