@@ -27,13 +27,13 @@ const startServer =  async () => {
 
     // Catcher
     app.use((_req, res) => {
-      return res.status(404).json({ message: 'Mainframe has been disabled' })
+      return res.status(404).json({ message: 'Path not found' })
     })
 
     const server = app.listen(PORT, () => console.log(`🚀 Server up and running on port ${PORT}`))
     server.timeout = 10000    // 10sec server timeout
   } catch (err) {
-    console.log('🚨 Alert - cant connect')
+    console.log('🚨 Alert - cannot connect')
     console.log(err)
   }
 }
