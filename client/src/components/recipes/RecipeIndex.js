@@ -13,8 +13,9 @@ const RecipeIndex = ({ growingTree }) => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const { data } = await axios('https://ga-cheesebored.herokuapp.com/cheeses')
+        const { data } = await axios('/api/recipes')
         setRecipes(data)
+        console.log(data)
       } catch (err) {
         setHasError(true)
       }
@@ -35,7 +36,7 @@ const RecipeIndex = ({ growingTree }) => {
             {hasError ? 
               <h2 className="display-5 text-center">Oh! Something went wrong</h2> 
               : 
-              <img className="growingTree" src={growingTree} alt="GrowingvTree gif" />
+              <img className="growingTree" src={growingTree} alt="GrowingTree gif" />
             }
           </>
         }
