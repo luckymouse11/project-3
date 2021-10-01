@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory , Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Register = () => {
@@ -39,10 +39,10 @@ const Register = () => {
 
   return (
     <div className='container'>
-      <div className='form'>
-        <form onSubmit={handleSubmit} className="form-field register">
+      <div className='form-container'>
+        <form onSubmit={handleSubmit} className='form-field register'>
           <h2>Register</h2>
-          <label htmlFor="username">Username</label>
+          <label htmlFor='username'>Username</label>
           <input type='text' name='username' placeholder='Username' value ={FormData.username} onInput={handleChange}/>
           <label htmlFor='email'>Email</label>
           <input type='email' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
@@ -50,7 +50,8 @@ const Register = () => {
           <input type='password' name='password' placeholder='Password' value ={FormData.password} onInput={handleChange}/>
           <label htmlFor='passwordConfirmation'>Confirm Password</label>
           <input type='password' name='passwordConfirmation' placeholder='Password again' value ={FormData.passwordConfirmation} onInput={handleChange}/>
-          <button className='submit'>Register</button>
+          <button className='submit btn'>Register</button>
+          <p>Already registered? <Link to='/login'>Login</Link></p>
         </form>
       </div>
     </div>

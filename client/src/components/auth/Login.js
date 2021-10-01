@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -35,15 +35,16 @@ const Login = () => {
 
   return (
     <div className='container'>
-      <div className='form'>
-        <form onSubmit={handleSubmit}>
+      <div className='form-container'>
+        <form onSubmit={handleSubmit} className='form-field register'>
           <h2>Log in</h2>
           <label htmlFor='email'>Email</label>
           <input type='text' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
           <label htmlFor='password'>Password</label>
           <input type='text' name='password' placeholder='Password' value ={FormData.password} onInput={handleChange}/>
-          <button className='submit'>Log in</button>
+          <button className='submit btn'>Log in</button>
         </form>
+        <p>Don&apos;t have an account? <Link to='/register'>Register here</Link></p>
       </div>
     </div>
     
