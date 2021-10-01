@@ -19,9 +19,9 @@ const Login = () => {
   const handleSubmit = async(event)=>{
     event.preventDefault()
     try {
-      const { data } = await axios.post('http://localhost:4000/login', formData)
+      const { data } = await axios.post('/api/login', formData)
       setTokenToLocalStorage(data.token)
-      history.push('/recipes')
+      history.push('/api/recipes')
     } catch (err) {
       // could add an error message to user here? window pop up? or animate box?
       console.log(err)

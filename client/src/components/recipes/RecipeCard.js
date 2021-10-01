@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import RecipeIndex from './RecipeIndex'
 
-const RecipeCard = () => {
+const RecipeCard = ({ recipeName }) => {
   return (
-    <div className="recipe">
+    <div className="recipe col-12 col-md-6 col-lg-4 mb-4">
       <Link to='/recipes'>
         <div className="card text-center h-100">
           <div className="card-header">
-            <p>Recipe name</p>
+            <p>{recipeName}</p>
           </div>
           <div className="card-image">
-            <p>Recipe image</p>
+            <img src='../images/growingTree.gif'/>
           </div>
           <div className="card-text mt-auto">
             Recipe added by
