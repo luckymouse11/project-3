@@ -34,13 +34,13 @@ const Nav = () => {
   }
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className='navbar navbar-expand-sm navbar-light bg-light justify-content-between bb-3'>
       <div className='container-fluid'>
         <div className="navbar-header">
-          <Link to='/' className='navbar-brand'>HOME</Link>
+          <Link to='/' className='navbar-brand'>Green Plate</Link>
         </div>
       
-        <div className='nav navbar-nav me-auto mb-2 mb-lg-0'>
+        <div className='nav navbar-nav mb-1 mb-lg-0'>
           <li className='nav-item m-2'>
             <Link to='/recipes' className='nav-link'>Recipes</Link>
           </li>
