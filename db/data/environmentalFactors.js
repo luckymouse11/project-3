@@ -1,4 +1,8 @@
 //scarcity-weighted water use
+//Water scarcity is more extreme than water stress, and occurs when water demand exceeds internal water resources.
+
+//water use - definitions --
+//Water withdrawals, are defined as freshwater taken from ground or surface water sources, either permanently or temporarily, and conveyed to a place of use.
 
 //intro/desc for env factors main page--
 //94% of mammal biomass (excluding humans) is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4 Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them
@@ -40,7 +44,7 @@ export default [
     image: { waterUseImage },
     totalGraph: { waterusegraph },
     secondGraphic: 'detailed water info here',
-    description: '70% of global freshwater withdrawals are used for agriculture'
+    description: 'Water withdrawals, are defined as freshwater taken from ground or surface water sources, either permanently or temporarily, and conveyed to a place of use. 70% of global freshwater withdrawals are used for agriculture. A growing global population and economic shift towards more resource-intensive consumption patterns means global freshwater use — that is, freshwater withdrawals for agriculture, industry and municipal uses — has increased nearly six-fold since 1900. Rates of global freshwater use increased sharply from the 1950s onwards, but since 2000 appears to be plateauing, or at least slowing'
   },
   {
     name: 'Scarcity-Weighted Water Use',
