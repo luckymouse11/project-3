@@ -23,20 +23,24 @@ const RecipeIndex = ({ growingTree }) => {
     getRecipes()
   }, [])
 
+  
+
   return (
-    <section className="recipe-list container mt-4">
-      <div className="row">
+    <section className='recipe-list container mt-4'>
+      <div className='row'>
         {recipes.length > 0 ?
           recipes.map( recipe => {
+            const owner = recipe.owner
             console.log(recipe)
-            return <RecipeCard key={recipe._id} {...recipe} />
+            console.log(owner)
+            return <RecipeCard key={recipe._id} {...recipe} {...owner}/>
           })
           :
           <>
             {hasError ? 
-              <h2 className="display-5 text-center">Oh! Something went wrong</h2> 
+              <h2 className='display-5 text-center'>Oh! Something went wrong</h2> 
               : 
-              <img className="growingTree" src={growingTree} alt="GrowingTree gif" />
+              <img className='growingTree' src={growingTree} alt='GrowingTree gif' />
             }
           </>
         }
