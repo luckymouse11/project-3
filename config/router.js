@@ -29,9 +29,9 @@ router.route('/login')
   .post(loginUser)
 
 router.route('/user')
-  .get(secureRoute, getUser)
+  .get(getUser)
 
-router.route('/user/:id')
+router.route('/users/:id')
   .get(getSingleUser)
 
 router.route('/environmentalfactors')
