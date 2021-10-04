@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link , useHistory , useLocation } from 'react-router-dom'
+// import User from '../user/User'
 
 const Nav = () => {
 
@@ -34,20 +35,18 @@ const Nav = () => {
   }
 
   return (
-    <div className='navbar'>
-      <div className='container'>
-        <div className='home-logo'>
-          <Link to='/'>HOME</Link>
+    <nav className='navbar navbar-expand-sm navbar-light bg-light justify-content-between bb-3'>
+      <div className='container-fluid'>
+        <div className="navbar-header">
+          <Link to='/' className='navbar-brand'>Green Plate</Link>
         </div>
-        <div className='nav'>
-          <li>
-            <Link to='/recipes'>Recipes</Link>
+      
+        <div className='nav navbar-nav mb-1 mb-lg-0'>
+          <li className='nav-item m-2'>
+            <Link to='/recipes' className='nav-link'>Recipes</Link>
           </li>
-          <li>
-            <Link to='/about'>About</Link>
-          </li>
-          <li>
-            <Link to='/users/'>Profile</Link>
+          <li className='nav-item m-2'>
+            <Link to='/about' className='nav-link'>About</Link>
           </li>
           <li>
             <Link to='/environmentalfactors/'>Environmental Factors</Link>
@@ -56,25 +55,32 @@ const Nav = () => {
             userIsAuthenticated() ?
 
             // if isAuthenticated is true:
-              <li>
-                <span className='logout-link' onClick={handleLogout}>Logout</span>
-              </li>
+              <>
+                <li className='nav-item m-2'>
+                  <Link to={'/user'} className='nav-link'>Profile</Link>
+                </li>
+                <li className='nav-item m-2'>
+                  <span className='logout-link nav-link' onClick={handleLogout} >Logout</span>
+                </li>
+              </>
 
               :
 
               //isAuthenticated is false:
               <> 
-                <li>
-                  <Link to='/register'>Register</Link>
-                </li>
-                <li>
-                  <Link to='/login'>Login</Link>
+                <li className="nav-item m-2 dropdown">
+                  <Link to='/login' className="dropdown-toggle nav-link" data-toggle="dropdown">Login/Register<span className="caret"></span></Link>
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><Link to='/register' className="dropdown-item">Register</Link></li>
+                    <li><Link to='/login' className="dropdown-item">Login</Link></li>
+                  </ul>
                 </li>
               </>
           }
         </div>
+      
       </div>
-    </div>
+    </nav>
   )
 }
 

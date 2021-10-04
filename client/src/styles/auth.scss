@@ -1,0 +1,19 @@
+.form-container{
+  .form-field {
+    border: 2px, dotted, #386641;
+    h2{
+      margin: 20px auto
+    }
+    input{
+      border-radius: 0;
+      margin-bottom: 12px;
+    }
+    button {
+      background-color: #386641;
+      color: white;
+      border-radius: 0;
+      padding: 8px 18px;
+      margin-bottom: 12px;
+    }
+  }
+}
