@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
+
 const User = ({ growingTree }) => {
 
   const [ hasError, setHasError ] = useState(false)
@@ -14,7 +15,7 @@ const User = ({ growingTree }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const { data } = await axios('/users/:id')
+        const { data } = await axios('/api/users/:id')
         setUser(data)
       } catch (err) {
         setHasError(true)
@@ -40,7 +41,8 @@ const User = ({ growingTree }) => {
         :
         <>
           {hasError ? 
-            <h2 className="display-5 text-center">Oh! Something went wrong</h2> 
+            <h2 className="display-5 text-center">Oh! Something went wrong</h2>
+            
             : 
             <img className="growingTree" src={growingTree} alt="Growing Tree gif" />
           }

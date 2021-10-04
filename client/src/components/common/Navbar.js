@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link , useHistory , useLocation } from 'react-router-dom'
+// import User from '../user/User'
 
 const Nav = () => {
 
@@ -55,7 +56,7 @@ const Nav = () => {
             // if isAuthenticated is true:
               <>
                 <li className='nav-item m-2'>
-                  <Link to='/users/' className='nav-link'>Profile</Link>
+                  <Link to={'/user'} className='nav-link'>Profile</Link>
                 </li>
                 <li className='nav-item m-2'>
                   <span className='logout-link nav-link' onClick={handleLogout} >Logout</span>
