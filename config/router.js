@@ -1,6 +1,6 @@
 import express from 'express'
 import { getAllRecipes, createRecipe, getSingleRecipe, updateRecipe, deleteRecipe, addComment, deleteComment } from '../controllers/recipes.js'
-import { getUser, getSingleUser } from '../controllers/users.js'
+import { getMyProfile, getSingleUser } from '../controllers/users.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { getAllFactors, getSingleFactor } from '../controllers/environmentalFactors.js'
@@ -28,8 +28,8 @@ router.route('/register')
 router.route('/login')
   .post(loginUser)
 
-router.route('/user')
-  .get(getUser)
+router.route('/profile')
+  .get(secureRoute, getMyProfile)
 
 router.route('/users/:id')
   .get(getSingleUser)

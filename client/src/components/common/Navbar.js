@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link , useHistory , useLocation } from 'react-router-dom'
-// import User from '../user/User'
+import { getPayload } from '../helpers/Auth.js'
 
 const Nav = () => {
 
@@ -9,18 +9,6 @@ const Nav = () => {
 
   useEffect(()=>{
   }, [location.pathname])
-
-  const getTokenFromLocalStorage = ()=>{
-    return window.localStorage.getItem('token')
-  }
-
-  const getPayload = ()=>{
-    const token = getTokenFromLocalStorage()
-    if (!token) return
-    const splitToken = token.split('.')
-    if (splitToken.length < 3) return
-    return JSON.parse(atob(splitToken[1]))
-  }
 
   const userIsAuthenticated = ()=>{
     const payload = getPayload()
@@ -48,8 +36,8 @@ const Nav = () => {
           <li className='nav-item m-2'>
             <Link to='/about' className='nav-link'>About</Link>
           </li>
-          <li>
-            <Link to='/environmentalfactors/'>Environmental Factors</Link>
+          <li className='nav-item m-2'>
+            <Link to='/environmentalfactors/'  className='nav-link'>Environmental Factors</Link>
           </li>
           {
             userIsAuthenticated() ?
@@ -57,7 +45,7 @@ const Nav = () => {
             // if isAuthenticated is true:
               <>
                 <li className='nav-item m-2'>
-                  <Link to={'/user'} className='nav-link'>Profile</Link>
+                  <Link to={'/profile'} className='nav-link'>Profile</Link>
                 </li>
                 <li className='nav-item m-2'>
                   <span className='logout-link nav-link' onClick={handleLogout} >Logout</span>
