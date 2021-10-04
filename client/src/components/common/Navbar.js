@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link , useHistory , useLocation } from 'react-router-dom'
-import { getPayload } from '../helpers/Auth.js'
+import { userIsAuthenticated } from '../helpers/Auth.js'
 
 const Nav = () => {
 
@@ -10,19 +10,13 @@ const Nav = () => {
   useEffect(()=>{
   }, [location.pathname])
 
-  const userIsAuthenticated = ()=>{
-    const payload = getPayload()
-    if (!payload) return
-    const currentTime = Math.round(Date.now() / 1000)
-    return currentTime < payload.exp
-  }
-
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     history.push('/')
   }
 
   return (
+    
     <nav className='navbar navbar-expand-sm navbar-light bg-light justify-content-between bb-3'>
       <div className='container-fluid'>
         <div className="navbar-header">
