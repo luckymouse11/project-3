@@ -1,6 +1,6 @@
 import User from '../models/user.js'
 
-export const getUser = async (req, res) => {
+export const getMyProfile = async (req, res) => {
   try {
     const user = await (await User.findById(req.currentUser._id)).populate('createdRecipes')
     if (!user) throw new Error('User not found')
