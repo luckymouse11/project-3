@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -19,9 +19,9 @@ const Login = () => {
   const handleSubmit = async(event)=>{
     event.preventDefault()
     try {
-      const { data } = await axios.post('http://localhost:4000/login', formData)
+      const { data } = await axios.post('/api/login', formData)
       setTokenToLocalStorage(data.token)
-      history.push('/recipes')
+      history.push('/api/recipes')
     } catch (err) {
       // could add an error message to user here? window pop up? or animate box?
       console.log(err)
@@ -34,16 +34,20 @@ const Login = () => {
   
 
   return (
-    <div className='container'>
-      <div className='form'>
-        <form onSubmit={handleSubmit}>
-          <h2>Log in</h2>
-          <label htmlFor='email'>Email</label>
-          <input type='text' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
-          <label htmlFor='password'>Password</label>
-          <input type='text' name='password' placeholder='Password' value ={FormData.password} onInput={handleChange}/>
-          <button className='submit'>Log in</button>
-        </form>
+    <div className='container full-height'>
+      <div className='form-container row justify-content-center'>
+        <div className='col col col-lg-6 col-md-7 col-sm-11'>
+          <form onSubmit={handleSubmit} className='form-field register flex-column align-items-center'>
+            <h2>Log in</h2>
+            <label htmlFor='email' className='form-label'>Email</label>
+            <input type='text' className='form-control' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
+            <label htmlFor='password' className='form-label'>Password</label>
+            <input type='text' className='form-control' name='password' placeholder='Password' value ={FormData.password} onInput={handleChange}/>
+            <button className='submit btn'>Log in</button>
+            <p>Don&apos;t have an account? <Link to='/register'>Register here</Link></p>
+          </form>
+        </div>
+        
       </div>
     </div>
     
