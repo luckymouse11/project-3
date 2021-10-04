@@ -14,7 +14,7 @@ const RecipeShow = ({ growingTree }) => {
   useEffect(() => {
     const getRecipe = async () => {
       try {
-        const { data } = await axios('/api/recipes/:id')
+        const { data } = await axios(`/api/recipes/${id}`)
         setRecipe(data)
       } catch (err) {
         setHasError(true)
@@ -28,33 +28,49 @@ const RecipeShow = ({ growingTree }) => {
   return (
     <>
       { recipe ? 
-        <div className="container mt-4">
-          <h2>Recipe Name</h2>
+        <div className='recipe-show container mt-4'>
+          <h2>{recipe.recipeName}</h2>
           <hr />
-          <div className="row">
-            <div className="col-12 col-md-6">
+          <div className='row'>
+            <div className='col-12 col-md-6'>
               <img src={growingTree} />
             </div>
-            <div className="col-12 col-md-6">
-              <h4><span>🍽</span> Recipe Name</h4>
-              <p>Recipe notes</p>
+            <div className='col-12 col-md-6'>
+              <div className ='environmental-impact text-center'>
+                <h2>Environmental Impact</h2>
+                <div className='factors d-flex justify-content-between'>
+                  <div className ='CO2'>CO2</div>
+                  <div className ='Water'>Water</div>
+                  <div className ='Land'>Land</div>
+                </div>
+                <hr />
+              </div>
+              <h4><span>🍽</span> Array of ingredients</h4>
+              <p>Key ingredients used in recipe</p>
               <hr />
-              <h4><span>🌍</span> Type of Cuisine</h4>
-              <p className="lead"></p>
+              <h4><span>🌍</span> Link to full recipe instructions</h4>
+              <p className='lead'><a href='#'>www.examplerecipe.com</a></p>
+              <hr />
+              <h4><span>📝</span> Overview</h4>
+              <p>Brief set of instructions for owner to input</p>
               <hr />
               <h4><span>🧑‍🍳</span> Added by</h4>
-              <p className="lead">Recipe added by: xxxxxxxxx</p>
+              <p>Recipe added by: {recipe.owner.username}</p>
               <hr />
-              <Link to="/recipes" className="btn btn-lg btn-yellow">Back to recipes</Link>
+              <Link to='/recipes' className='btn btn-lg'>Back to recipes</Link>
             </div>
           </div>
+          <div className='comment-section container row mt-4 border'>
+            <p>Comments Section</p>
+          </div>
         </div>
+        
         :
         <>
           {hasError ? 
-            <h2 className="display-5 text-center">Oh! Something went wrong</h2> 
+            <h2 className='display-5 text-center'>Oh! Something went wrong</h2> 
             : 
-            <img className="growingTree" src={growingTree} alt="Growing Tree gif" />
+            <img className='growingTree' src={growingTree} alt='Growing Tree gif' />
           }
         </>
       }
