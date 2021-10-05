@@ -1,21 +1,4 @@
-//intro/desc for env factors main page--
-//Biomass, the weight or total quantity of living organisms of one animal or plant species (species biomass) or of all the species in a community (community biomass), commonly referred to a unit area or volume of habitat. The weight or quantity of organisms in an area at a given moment is the standing crop. 
-
-//water scarcity -- https://www.sciencedirect.com/topics/engineering/water-withdrawal
-//env fact all -- https://ourworldindata.org/environmental-impacts-of-food#
-
-//envfactors image
-import co2 from 'client/src/images/carbonFootprint/co2-image.png'
-import landuse from 'client/src/images/landUse/land-use.png'
-import wateruse from 'client/src/images/waterUse/water-image.png'
-import waterpollution from 'client/src/images/waterPollution/water-pollution.png'
-import scarcitywateruse from 'client/src/images/scarcityWeightedWaterUse/scarcity-weighted-water-use.png'
-
-//envfactors totalgraphs
-import carbonfootprintgraph from 'client/src/images/carbonFootprint/carbon-footprint-graph.png'
-import landusegraph from 'client/src/images/landUse/land-use-graph.png'
-import waterusegraph from 'client/src/images/waterUse/water-use-graph.png'
-import waterpollutiongraph from 'client/src/images/waterPollution/water-pollution-graph.png'
+kjom 'client/src/images/waterPollution/water-pollution-graph.png'
 import scarcityweightedwaterusegraph from 'client/src/images/scarcityWeightedWaterUse/scarcity-weighted-water-use-graph.png'
 
 //envfactors 2nd graphic
