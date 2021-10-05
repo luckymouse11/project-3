@@ -41,8 +41,8 @@ const AddRecipe = () => {
     event.preventDefault()
     try {
       const { data } = await axios.post('/api/recipes', formData)
-      history.push('/api/recipes')
       console.log(data)
+      history.push('/recipes')
     } catch (err) {
       console.log(err)
     }
@@ -54,7 +54,7 @@ const AddRecipe = () => {
   }
 
   const handleImageUrl = (url) => {
-    setFormData({ ...formData, profileImage: url })
+    setFormData({ ...formData, image: url })
   }
 
   return (

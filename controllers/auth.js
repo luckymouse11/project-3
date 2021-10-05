@@ -1,6 +1,8 @@
 import User from '../models/user.js'
-import { secret } from '../config/environment.js'
+import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
+
+dotenv.config()
 
 // check username, validatePassword
 
@@ -23,7 +25,7 @@ export const loginUser = async (req, res) => {
     if (!userToLogin || !userToLogin.validatePassword(req.body.password)){
       throw new Error()
     }
-    const token = jwt.sign({ sub: userToLogin._id }, secret, { expiresIn: '7 days' })
+    const token = jwt.sign({ sub: userToLogin._id }, process.env.secret, { expiresIn: '7 days' })
     console.log('TOKEN ->', token)
     return res.status(200).json({
       message: `Welcome back ${userToLogin.username}`,

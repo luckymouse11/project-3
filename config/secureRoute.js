@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken'
-import { secret } from './environment.js'
+import dotenv from 'dotenv'
 import User from '../models/user.js'
+
+dotenv.config()
 
 export const secureRoute = async (req, res, next) => {
   try {
@@ -8,7 +10,7 @@ export const secureRoute = async (req, res, next) => {
     console.log(req.headers.authorization)
     const token = req.headers.authorization.replace('Bearer ', '')
     console.log('Token ->', token)
-    const payload = jwt.verify(token, secret)
+    const payload = jwt.verify(token, process.env.secret)
     console.log('jwt verified')
     const userToVerify = await User.findById(payload.sub)
     console.log('user found by id')
