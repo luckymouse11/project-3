@@ -21,7 +21,7 @@ import scarcityweightedwaterusegraph from 'client/src/images/scarcityWeightedWat
 //envfactors 2nd graphic
 import globallanduse from 'client/src/images/landUse/global-land-use-graphic.png'
 import GHGsfromfood from 'client/src/images/carbonFootprint/GHGs-come-from-food.png'
-
+import wateruselongrun from 'client/src/images/waterUse/global-freshwater-use-over-the-long-run.png'
 export default [
   {
     name: 'Carbon Footprint',
@@ -41,21 +41,21 @@ export default [
     name: 'Water Use',
     image: { wateruse },
     totalGraph: { waterusegraph },
-    secondGraphic: 'detailed water info here', //TO FIND
+    secondGraphic: { wateruselongrun },
     description: 'Water withdrawals, are defined as freshwater taken from ground or surface water sources, either permanently or temporarily, and conveyed to a place of use. 70% of global freshwater withdrawals are used for agriculture. A growing global population and economic shift towards more resource-intensive consumption patterns means global freshwater use — that is, freshwater withdrawals for agriculture, industry and municipal uses — has increased nearly six-fold since 1900. Rates of global freshwater use increased sharply from the 1950s onwards, but since 2000 appears to be plateauing, or at least slowing'
   },
   {
     name: 'Scarcity-Weighted Water Use',
     image: { scarcitywateruse },
     totalGraph: { scarcityweightedwaterusegraph } ,
-    secondGraphic: 'second graphic', //TO FIND
+    secondGraphic: 'scarcity-water-graphic-2', //TO FIND
     description: 'Water is a precious resource in our planet. Its relative availability—71% of the Earth’s surface is water—has been responsible for a lack of further efforts towards water consumption efficiency. The total amount of water is 1.38×1018 m3. Only 2.6% is freshwater, and out of that, 10% alone is accessible, around 3.7×1015 m3. Water scarcity occurs when water demand exceeds internal water resources. Recently, numerous reports have estimated that by 2025 two-thirds of the population will suffer water scarcity. '
   },
   {
     name: 'Water Pollution',
     image: { waterpollution },
     totalGraph: { waterpollutiongraph },
-    secondGraphic: 'detailed water info here', //TO ADD
+    secondGraphic: 'water-pollution-graphic-2', //TO FIND
     description: 'Eutrophication – the pollution of water bodies and ecosystems with excess nutrients – is a major environmental problem. The runoff of nitrogen and other nutrients from agricultural production systems is a leading contributor. 78% of global ocean and freshwater eutrophication (the pollution of waterways with nutrient-rich pollutants) is caused by agriculture.'
   }
 
