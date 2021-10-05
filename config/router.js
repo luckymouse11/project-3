@@ -9,7 +9,7 @@ const router = express.Router()
 
 router.route('/recipes')
   .get(getAllRecipes)
-  .post(secureRoute, createRecipe)
+  .post(createRecipe)
 
 router.route('/recipes/:id')
   .get(getSingleRecipe)
