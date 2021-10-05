@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import AsyncSelect from 'react-select/async'
+import Select from 'react-select'
+// import AsyncSelect from 'react-select/async'
 
 
 // Components
@@ -67,9 +68,9 @@ const RecipeIndex = ({ growingTree }) => {
     <section className='recipe-list container mt-4'>
       <div>
         <Link to='/AddRecipe'>Add recipe</Link>
-        <AsyncSelect 
+        <Select 
           options={ingredientOptions}
-          name="ingredients"
+          name='ingredients'
           isMulti
           onChange={(selected) => handleMultiSelected(selected, 'ingredients')}
         />
