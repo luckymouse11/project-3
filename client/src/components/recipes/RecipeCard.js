@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const RecipeCard = ({ _id, recipeName, image, username }) => {
+const RecipeCard = ({ _id, recipeName, image }) => {
+
   return (
     <div className='recipe col-12 col-md-6 col-lg-4 mb-4'>
       <Link to={`/recipes/${_id}`}>
@@ -13,10 +14,12 @@ const RecipeCard = ({ _id, recipeName, image, username }) => {
             <img src={image}/>
           </div>
           <div className='card-text mt-auto'>
-            Recipe added by {username}
+            ENVIRONMENT SCORE HERE
           </div>
         </div>
       </Link>
+      
+  
     </div>
   )
 }

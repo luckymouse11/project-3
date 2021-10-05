@@ -7,18 +7,18 @@ export const secureRoute = async (req, res, next) => {
     if (!req.headers.authorization) throw new Error('Missing headers')
     console.log(req.headers.authorization)
     const token = req.headers.authorization.replace('Bearer ', '')
-    console.log('Token', token)
+    console.log('Token ->', token)
     const payload = jwt.verify(token, secret)
-    console.log('number3 why no show!!!!!!!!!!')
+    console.log('jwt verified')
     const userToVerify = await User.findById(payload.sub)
-    console.log('number4')
+    console.log('user found by id')
     if (!userToVerify) throw new Error('User not found')
-    console.log('number5')
+    console.log('there is a user with this id')
     req.currentUser = userToVerify
-    console.log('number6')
+    console.log('the current user is the same as user to verify')
     next()
   } catch (err) {
     console.log(err)
-    return res.status(401).json({ message: 'Unauthorised, buddy' })
+    return res.status(401).json({ message: 'Unauthorised' })
   }
 }
