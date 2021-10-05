@@ -18,9 +18,7 @@ const About = () => {
 
         <article className='article'>
           <h2>Environmental factors</h2>
-<<<<<<< HEAD
           <p>NOTES TO EDIT--94% of mammal biomass (the total quantity of animals on the planet), excluding humans, is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4 Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them. Food, therefore, lies at the heart of trying to tackle climate change, reducing water stress, pollution, restoring lands back to forests or grasslands, and protecting the world’s wildlife</p>
-=======
           <div className='environmental-factors d-flex'>
             <div className='co2'>
               <img src='../src/images/about-co2-image.png' alt='co2-image'/>
@@ -50,7 +48,6 @@ const About = () => {
               </ul>
             </div>
           </div>
->>>>>>> a6ad9ba9e7efb644154cc300e0cb3e54498b800e
         </article>
 
         <article className='article'>
