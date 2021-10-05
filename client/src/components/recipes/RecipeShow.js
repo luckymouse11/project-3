@@ -49,13 +49,13 @@ const RecipeShow = ({ growingTree }) => {
               <p>Key ingredients used in recipe</p>
               <hr />
               <h4><span>🌍</span> Link to full recipe instructions</h4>
-              <p className='lead'><a href='#'>www.examplerecipe.com</a></p>
+              <p className='lead'>This recipe is from: <a href={recipe.url}>{recipe.url}</a></p>
               <hr />
               <h4><span>📝</span> Overview</h4>
               <p>Brief set of instructions for owner to input</p>
               <hr />
               <h4><span>🧑‍🍳</span> Added by</h4>
-              <p>Recipe added by: {recipe.owner.username}</p>
+              <p>Recipe added by: <Link to={`/users/${recipe.owner._id}`}>{recipe.owner.username}</Link></p>
               <hr />
               <Link to='/recipes' className='btn btn-lg'>Back to recipes</Link>
             </div>

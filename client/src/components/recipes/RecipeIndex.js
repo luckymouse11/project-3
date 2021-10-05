@@ -33,7 +33,7 @@ const RecipeIndex = ({ growingTree }) => {
             const owner = recipe.owner
             console.log(recipe)
             console.log(owner)
-            return <RecipeCard key={recipe._id} {...recipe} {...owner}/>
+            return <RecipeCard key={recipe._id} {...recipe}/>
           })
           :
           <>
