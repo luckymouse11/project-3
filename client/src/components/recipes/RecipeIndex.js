@@ -27,7 +27,7 @@ const RecipeIndex = ({ growingTree }) => {
 
   return (
     <section className='recipe-list container mt-4'>
-      <div className='row'>
+      <div className='row g-3'>
         {recipes.length > 0 ?
           recipes.map( recipe => {
             const owner = recipe.owner
