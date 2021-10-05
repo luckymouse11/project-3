@@ -38,7 +38,7 @@ const Login = () => {
     <div className='container full-height'>
       <div className='form-container row justify-content-center'>
         <div className='col col col-lg-6 col-md-7 col-sm-11'>
-          <form onSubmit={handleSubmit} className='form-field register flex-column align-items-center'>
+          <form onSubmit={handleSubmit} className='form-field login flex-column align-items-center'>
             <h2>Log in</h2>
             <label htmlFor='email' className='form-label'>Email</label>
             <input type='text' className='form-control' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
