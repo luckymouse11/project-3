@@ -9,9 +9,10 @@ const router = express.Router()
 
 router.route('/recipes')
   .get(getAllRecipes)
-
-router.route('/addrecipe')
   .post(createRecipe)
+
+
+// router.route('/createrecipe')
 
 router.route('/recipes/:id')
   .get(getSingleRecipe)

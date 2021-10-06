@@ -14,7 +14,7 @@ import MyProfile from './components/user/MyProfile'
 import RecipeIndex from './components/recipes/RecipeIndex'
 import RecipeShow from './components/recipes/RecipeShow'
 
-import AddRecipe from './components/auth/AddRecipe'
+import CreateRecipe from './components/auth/CreateRecipe'
 
 import EnvironmentalFactor from './components/environmentalfactors/EnvironmentalFactor'
 import AllEnvironmentalFactors from './components/environmentalfactors/AllEnvironmentalFactors'
@@ -32,8 +32,8 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route exact path='/addrecipe'>
-            <AddRecipe />
+          <Route exact path='/createrecipe'>
+            <CreateRecipe />
           </Route>
           <Route exact path='/recipes'>
             <RecipeIndex growingTree={growingTree}/>

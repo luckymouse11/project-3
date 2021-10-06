@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { dbURI } from '../config/environment.js'
+import 'dotenv/config'
 
 // Models
 import Recipe from '../models/recipe.js'
@@ -16,7 +16,7 @@ import ingredientData from './data/ingredients.js'
 // Seed database
 const seedDatabase = async () => {
   try {
-    await mongoose.connect(dbURI)
+    await mongoose.connect(process.env.dbURI)
     console.log('🚀🌏 Database connected')
 
     // Drop current database
