@@ -1,23 +1,6 @@
 // import React, { useState, useEffect } from 'react'
 // import axios from 'axios'
-
-// // State
-// const [ allEnvFactors, setAllEnvFactors ] = useState([])
-// const [ hasError, setHasError ] = useState(false)
-
-// useEffect(({ growingTree }) => {
-//   const getAllEnvFactors = async () => {
-//     try {
-//       const { data } = await axios('/api/environmentalfactors')
-//       setAllEnvFactors(data)
-//       console.log(allEnvFactors)
-//       console.log(data)
-//     } catch (err) {
-//       setHasError(true)
-//     }
-//   }
-//   getAllEnvFactors()
-// }, [])
+import { Link } from 'react-router-dom'
 
 const AllEnvironmentalFactors = () => {
   
@@ -43,23 +26,28 @@ const AllEnvironmentalFactors = () => {
         </div>
         <div className="pos-2">
           <h5>Carbon Footprint</h5>
-          <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/co2-image_txzm1d.svg'/>
+          <Link to={'/environmentalfactors/615db6b19c570c19e2d806db'}>
+            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/co2-image_txzm1d.svg'/></Link>
         </div>
         <div className="pos-3">
           <h5>Land Use</h5>
-          <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/land-use_dki2em.png'/>
+          <Link to={'/environmentalfactors/615db6b19c570c19e2d806dc'}>
+            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/land-use_dki2em.png'/></Link>
         </div>
         <div className="pos-4">
           <h5>Water Use</h5>
-          <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432324/Green%20Plate/water-image_seblhm.png'/>
+          <Link to={'/environmentalfactors/615db6b19c570c19e2d806dd'}>
+            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432324/Green%20Plate/water-image_seblhm.png'/></Link>
         </div>
         <div className="pos-5">
           <h5>Water Pollution</h5>
-          <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432570/Green%20Plate/Screenshot_2021-10-05_at_12.16.00_jf1kjx.png'/>
+          <Link to={'/environmentalfactors/615db6b19c570c19e2d806df'}>
+            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432570/Green%20Plate/Screenshot_2021-10-05_at_12.16.00_jf1kjx.png'/></Link>
         </div>
         <div className="pos-6">
           <h5>Water Scarcity</h5>
-          <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432613/Green%20Plate/Screenshot_2021-10-05_at_12.16.43_vuhbc4.png'/>
+          <Link to={'/environmentalfactors/615db6b19c570c19e2d806de'}>
+            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432613/Green%20Plate/Screenshot_2021-10-05_at_12.16.43_vuhbc4.png'/></Link>
         </div>
         <div className="pos-7">
           <p>affect the planet?</p>
