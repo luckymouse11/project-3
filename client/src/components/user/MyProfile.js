@@ -1,37 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
-
+import { userIsAuthenticated } from '../helpers/Auth'
 import RecipeCard from '../recipes/RecipeCard'
 
-const User = ({ growingTree }) => {
+
+const MyProfile = ({ growingTree }) => {
+  console.log('hello????')
 
   const [ hasError, setHasError ] = useState(false)
-  const [ user, setUser ] = useState(null)
+  const [ myProfile, setMyProfile ] = useState(null)
   // const [ recipe, setRecipe ] = useState([])
 
 
-  const { id } = useParams()
-
   useEffect(() => {
-    const getUser = async () => {
+    const getMyProfile = async () => {
+      
       try {
-        const { data } = await axios(`/api/users/${id}`)
-        setUser(data)
+        const { data } = await axios.get('/api/profile')
+        setMyProfile(data)
+        console.log(data)
       } catch (err) {
         setHasError(true)
       }
     }
-    getUser()
-  }, [id])
+    getMyProfile()
+  }, [])
+  
 
-  useEffect(() => console.log(user), [user])
+  // useEffect(() => console.log(myProfile), [myProfile])
 
   return (
     <>
-      { user ? 
+      { userIsAuthenticated ? 
         <div className="container mt-4">
-          <h2>{user.username}</h2>
+          <h2>My Profile</h2>
           <hr />
           
           <h4>Environmental Impact Score</h4>
@@ -54,10 +56,10 @@ const User = ({ growingTree }) => {
             
           </div>
           <hr />
-          <h4>{user.username}&apos;s Recipes</h4>
+          <h4>My Recipes</h4>
           <div className='row g-3'>
-            {user.createdRecipes.length > 0 ?
-              user.createdRecipes.map( recipe => {
+            {myProfile.createdRecipes.length > 0 ?
+              myProfile.createdRecipes.map( recipe => {
                 console.log(recipe)
                 return <RecipeCard key={recipe._id} {...recipe}/>
               })
@@ -86,4 +88,4 @@ const User = ({ growingTree }) => {
 
 }
 
-export default User
+export default MyProfile

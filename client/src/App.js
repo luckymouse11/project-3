@@ -9,6 +9,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 
 import User from './components/user/User'
+import MyProfile from './components/user/MyProfile'
 
 import RecipeIndex from './components/recipes/RecipeIndex'
 import RecipeShow from './components/recipes/RecipeShow'
@@ -16,6 +17,7 @@ import RecipeShow from './components/recipes/RecipeShow'
 import AddRecipe from './components/auth/AddRecipe'
 
 import EnvironmentalFactor from './components/environmentalfactors/EnvironmentalFactor'
+import AllEnvironmentalFactors from './components/environmentalfactors/AllEnvironmentalFactors'
 import About from './components/about/About'
 
 // Images
@@ -45,10 +47,16 @@ function App() {
           <Route path='/login'>
             <Login />
           </Route>
+          <Route path='/profile'>
+            <MyProfile growingTree={growingTree}/>
+          </Route>
           <Route path='/users/:id'>
             <User />
           </Route>
-          <Route path='/environmentalfactor'>
+          <Route path='/environmentalfactors'>
+            <AllEnvironmentalFactors />
+          </Route>
+          <Route path='/environmentalfactors/:id'>
             <EnvironmentalFactor />
           </Route>
           <Route path='/about'>
