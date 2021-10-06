@@ -52,11 +52,7 @@ const RecipeShow = ({ growingTree }) => {
                 <hr />
               </div>
               <h4><span>🍽</span> </h4>
-              {recipe.ingredients.ingredient.map(item =>
-                <div className="badge bg-secondary me-1 mb-1" key={item.id}>
-                  {item.attributes.ingredient}
-                </div>
-              )}
+              INGREDIENTS
               <hr />
               <h4><span>🌍</span> Link to full recipe instructions</h4>
               <p>This recipe is from: <a href={recipe.url}>{recipe.url}</a></p>
