@@ -9,7 +9,6 @@ import ImageUpload from '../helpers/ImageUpload.js'
 const CreateRecipe = () => {
 
   const history = useHistory()
-  console.log('history ->', history)
 
   const [ ingredients, setIngredients ] = useState([])
 
