@@ -52,7 +52,7 @@ const RecipeShow = ({ growingTree }) => {
                 <hr />
               </div>
               <h4><span>🍽</span> </h4>
-              {recipe.ingredients.map(item =>
+              {recipe.ingredients.ingredient.map(item =>
                 <div className="badge bg-secondary me-1 mb-1" key={item.id}>
                   {item.attributes.ingredient}
                 </div>
