@@ -7,6 +7,7 @@ const RecipeShow = ({ growingTree }) => {
   // State
   const [ recipe, setRecipe ] = useState(null)
   const [ hasError, setHasError ] = useState(false)
+  // const [ ]
   
   // Params
   const { id } = useParams()
@@ -22,6 +23,9 @@ const RecipeShow = ({ growingTree }) => {
     }
     getRecipe()
   }, [id])
+
+  //function to access each ingredient.carbonfootprint (or whichever env factor), and put into an array (useState?)
+  //then map using an acc to get total carbonfootprint of recipe
 
   useEffect(() => console.log(recipe), [recipe])
 
@@ -39,7 +43,7 @@ const RecipeShow = ({ growingTree }) => {
               <div className ='environmental-impact text-center'>
                 <h2>Environmental Impact</h2>
                 <div className='factors d-flex justify-content-between'>
-                  <div className ='CO2'>CO2</div>
+                  <div className ='CO2'></div>
                   <div className ='Water'>Water</div>
                   <div className ='Land'>Land</div>
                 </div>
