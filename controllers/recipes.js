@@ -31,7 +31,7 @@ export const getSingleRecipe = async (req, res) => {
   try {
     const { id } = req.params
     console.log(id)
-    const recipe = await Recipe.findById(id).populate('owner').populate('comments.owner')
+    const recipe = await (await Recipe.findById(id).populate('owner').populate('comments.owner')).populate('ingredients')
     return res.status(200).json(recipe)
   } catch (err) {
     console.log(err)

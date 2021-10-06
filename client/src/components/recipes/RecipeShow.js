@@ -7,7 +7,9 @@ const RecipeShow = ({ growingTree }) => {
   // State
   const [ recipe, setRecipe ] = useState(null)
   const [ hasError, setHasError ] = useState(false)
-  // const [ ]
+
+  // const { attributes: { recipeName, recipeDescription, url, image }, relationships } = recipe.data
+  // const ingredients = recipe.ingredients.populated ? recipe.included.filter(included => included.type === 'ingredients') : []
   
   // Params
   const { id } = useParams()
@@ -36,8 +38,8 @@ const RecipeShow = ({ growingTree }) => {
           <h2>{recipe.recipeName}</h2>
           <hr />
           <div className='row'>
-            <div className='col-12 col-md-6'>
-              <img src={growingTree} />
+            <div className='col-6'>
+              <img src={recipe.image} alt={recipe.name} className='col-12'/>
             </div>
             <div className='col-12 col-md-6'>
               <div className ='environmental-impact text-center'>
@@ -49,17 +51,21 @@ const RecipeShow = ({ growingTree }) => {
                 </div>
                 <hr />
               </div>
-              <h4><span>🍽</span> Array of ingredients</h4>
-              <p>Key ingredients used in recipe</p>
+              <h4><span>🍽</span> </h4>
+              {recipe.ingredients.map(item =>
+                <div className="badge bg-secondary me-1 mb-1" key={item.id}>
+                  {item.attributes.ingredient}
+                </div>
+              )}
               <hr />
               <h4><span>🌍</span> Link to full recipe instructions</h4>
-              <p className='lead'>This recipe is from: <a href={recipe.url}>{recipe.url}</a></p>
+              <p>This recipe is from: <a href={recipe.url}>{recipe.url}</a></p>
               <hr />
               <h4><span>📝</span> Overview</h4>
-              <p>Brief set of instructions for owner to input</p>
+              <p>{recipe.recipeDescription}</p>
               <hr />
               <h4><span>🧑‍🍳</span> Added by</h4>
-              <p>Recipe added by: <Link to={`/users/${recipe.owner._id}`}>{recipe.owner.username}</Link></p>
+              <p><Link to={`/users/${recipe.owner._id}`}>{recipe.owner.username}</Link></p>
               <hr />
               <Link to='/recipes' className='btn btn-lg'>Back to recipes</Link>
             </div>

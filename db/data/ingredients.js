@@ -24,6 +24,14 @@ export default [
     waterPollution: 2.33
   },
   {
+    ingredient: 'Beans',
+    carbonFootprint: 1.79,
+    landUse: 15.57,
+    waterUse: 435.7,
+    scarcityWeightedWaterUse: 22477.4,
+    waterPollution: 17.08
+  },
+  {
     ingredient: 'Beef (beef herd)',
     carbonFootprint: 99.48,
     landUse: 326.21,
@@ -40,15 +48,7 @@ export default [
     waterPollution: 365.29
   },
   {
-    ingredient: 'Beet Sugar',
-    carbonFootprint: 1.81,
-    landUse: 1.83,
-    waterUse: 217.7,
-    scarcityWeightedWaterUse: 9493.3,
-    waterPollution: 5.41
-  },
-  {
-    ingredient: 'Berries & Grapes',
+    ingredient: 'Berries',
     carbonFootprint: 1.53,
     landUse: 2.41,
     waterUse: 419.6,
@@ -62,14 +62,6 @@ export default [
     waterUse: 119.4,
     scarcityWeightedWaterUse: 8455.1,
     waterPollution: 5.01
-  },
-  {
-    ingredient: 'Cane Sugar',
-    carbonFootprint: 3.2,
-    landUse: 2.04,
-    waterUse: 620.1,
-    scarcityWeightedWaterUse: 16438.6,
-    waterPollution: 16.92
   },
   {
     ingredient: 'Cassava',
@@ -88,6 +80,14 @@ export default [
     waterPollution: 98.37
   },
   {
+    ingredient: 'Chicken',
+    carbonFootprint: 9.87,
+    landUse: 12.22,
+    waterUse: 660,
+    scarcityWeightedWaterUse: 14177.9,
+    waterPollution: 48.7
+  },
+  {
     ingredient: 'Citrus Fruit',
     carbonFootprint: 0.39,
     landUse: 0.86,
@@ -104,12 +104,20 @@ export default [
     waterPollution: 110.52
   },
   {
-    ingredient: 'Dark Chocolate',
+    ingredient: 'Chocolate (dark)',
     carbonFootprint: 46.65,
     landUse: 68.96,
     waterUse: 540.6,
     scarcityWeightedWaterUse: 2879.2,
     waterPollution: 87.08
+  },
+  {
+    ingredient: 'Duck',
+    carbonFootprint: 9.87,
+    landUse: 12.22,
+    waterUse: 660,
+    scarcityWeightedWaterUse: 14177.9,
+    waterPollution: 48.7
   },
   {
     ingredient: 'Eggs',
@@ -128,20 +136,60 @@ export default [
     waterPollution: 235.12
   },
   {
-    ingredient: 'Groundnuts',
-    carbonFootprint: 3.23,
-    landUse: 9.11,
-    waterUse: 1852.3,
-    scarcityWeightedWaterUse: 61797.9,
-    waterPollution: 14.14
+    ingredient: 'Fruit (other)',
+    carbonFootprint: 1.05,
+    landUse: 0.89,
+    waterUse: 153.5,
+    scarcityWeightedWaterUse: 9533.1,
+    waterPollution: 2.43
   },
   {
-    ingredient: 'Lamb & Mutton',
+    ingredient: 'Grapefruit',
+    carbonFootprint: 0.39,
+    landUse: 0.86,
+    waterUse: 82.7,
+    scarcityWeightedWaterUse: 4662.7,
+    waterPollution: 2.24
+  },
+  {
+    ingredient: 'Grapes',
+    carbonFootprint: 1.53,
+    landUse: 2.41,
+    waterUse: 419.6,
+    scarcityWeightedWaterUse: 21162.1,
+    waterPollution: 6.12
+  },
+  {
+    ingredient: 'Lamb',
     carbonFootprint: 39.72,
     landUse: 369.81,
     waterUse: 1802.8,
     scarcityWeightedWaterUse: 141925,
     waterPollution: 97.13
+  },
+  {
+    ingredient: 'Leeks',
+    carbonFootprint: 0.5,
+    landUse: 0.39,
+    waterUse: 14.3,
+    scarcityWeightedWaterUse: 932,
+    waterPollution: 3.24
+  },
+  {
+    ingredient: 'Lemon',
+    carbonFootprint: 0.39,
+    landUse: 0.86,
+    waterUse: 82.7,
+    scarcityWeightedWaterUse: 4662.7,
+    waterPollution: 2.24
+  },
+  {
+    ingredient: 'Lime',
+    carbonFootprint: 0.39,
+    landUse: 0.86,
+    waterUse: 82.7,
+    scarcityWeightedWaterUse: 4662.7,
+    waterPollution: 2.24
   },
   {
     ingredient: 'Maize',
@@ -160,6 +208,14 @@ export default [
     waterPollution: 10.65
   },
   {
+    ingredient: 'Mutton',
+    carbonFootprint: 39.72,
+    landUse: 369.81,
+    waterUse: 1802.8,
+    scarcityWeightedWaterUse: 141925,
+    waterPollution: 97.13
+  },
+  {
     ingredient: 'Nuts',
     carbonFootprint: 0.43,
     landUse: 12.96,
@@ -168,7 +224,7 @@ export default [
     waterPollution: 19.15
   },
   {
-    ingredient: 'Oatmeal',
+    ingredient: 'Oats',
     carbonFootprint: 2.48,
     landUse: 7.6,
     waterUse: 482.4,
@@ -176,7 +232,7 @@ export default [
     waterPollution: 11.23
   },
   {
-    ingredient: 'Onions & Leeks',
+    ingredient: 'Onions',
     carbonFootprint: 0.5,
     landUse: 0.39,
     waterUse: 14.3,
@@ -184,28 +240,28 @@ export default [
     waterPollution: 3.24
   },
   {
-    ingredient: 'Other Fruit',
-    carbonFootprint: 1.05,
-    landUse: 0.89,
-    waterUse: 153.5,
-    scarcityWeightedWaterUse: 9533.1,
-    waterPollution: 2.43
+    ingredient: 'Orange',
+    carbonFootprint: 0.39,
+    landUse: 0.86,
+    waterUse: 82.7,
+    scarcityWeightedWaterUse: 4662.7,
+    waterPollution: 2.24
   },
   {
-    ingredient: 'Other Pulses',
+    ingredient: 'Peanuts',
+    carbonFootprint: 3.23,
+    landUse: 9.11,
+    waterUse: 1852.3,
+    scarcityWeightedWaterUse: 61797.9,
+    waterPollution: 14.14
+  },
+  {
+    ingredient: 'Pulses (other)',
     carbonFootprint: 1.79,
     landUse: 15.57,
     waterUse: 435.7,
     scarcityWeightedWaterUse: 22477.4,
     waterPollution: 17.08
-  },
-  {
-    ingredient: 'Other Vegetables',
-    carbonFootprint: 0.53,
-    landUse: 0.38,
-    waterUse: 102.5,
-    scarcityWeightedWaterUse: 4911.4,
-    waterPollution: 2.27
   },
   {
     ingredient: 'Peas',
@@ -231,8 +287,9 @@ export default [
     scarcityWeightedWaterUse: 2754.2,
     waterPollution: 3.48
   },
+  
   {
-    ingredient: 'Poultry Meat',
+    ingredient: 'Poultry (other)',
     carbonFootprint: 9.87,
     landUse: 12.22,
     waterUse: 660,
@@ -264,6 +321,22 @@ export default [
     waterPollution: 1.61
   },
   {
+    ingredient: 'Rye Flour',
+    carbonFootprint: 1.57,
+    landUse: 3.85,
+    waterUse: 647.5,
+    scarcityWeightedWaterUse: 33385.6,
+    waterPollution: 7.16
+  },
+  {
+    ingredient: 'Soybeans',
+    carbonFootprint: 3.16,
+    landUse: 3.52,
+    waterUse: 148.6,
+    scarcityWeightedWaterUse: 5113.2,
+    waterPollution: 6.16
+  },
+  {
     ingredient: 'Soymilk',
     carbonFootprint: 0.98,
     landUse: 0.66,
@@ -272,7 +345,23 @@ export default [
     waterPollution: 1.06
   },
   {
-    ingredient: 'Tofu (soybeans)',
+    ingredient: 'Sugar (from beets)',
+    carbonFootprint: 1.81,
+    landUse: 1.83,
+    waterUse: 217.7,
+    scarcityWeightedWaterUse: 9493.3,
+    waterPollution: 5.41
+  },
+  {
+    ingredient: 'Sugar (from cane)',
+    carbonFootprint: 3.2,
+    landUse: 2.04,
+    waterUse: 620.1,
+    scarcityWeightedWaterUse: 16438.6,
+    waterPollution: 16.92
+  },
+  {
+    ingredient: 'Tofu',
     carbonFootprint: 3.16,
     landUse: 3.52,
     waterUse: 148.6,
@@ -288,7 +377,23 @@ export default [
     waterPollution: 7.51
   },
   {
-    ingredient: 'Wheat & Rye',
+    ingredient: 'Turkey',
+    carbonFootprint: 9.87,
+    landUse: 12.22,
+    waterUse: 660,
+    scarcityWeightedWaterUse: 14177.9,
+    waterPollution: 48.7
+  },
+  {
+    ingredient: 'Vegetables (other)',
+    carbonFootprint: 0.53,
+    landUse: 0.38,
+    waterUse: 102.5,
+    scarcityWeightedWaterUse: 4911.4,
+    waterPollution: 2.27
+  },
+  {
+    ingredient: 'Wheat Flour',
     carbonFootprint: 1.57,
     landUse: 3.85,
     waterUse: 647.5,

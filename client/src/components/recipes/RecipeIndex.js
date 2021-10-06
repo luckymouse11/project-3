@@ -74,13 +74,16 @@ const RecipeIndex = ({ growingTree }) => {
   return (
     <section className='recipe-list container mt-4'>
       <div>
-        <Link to='/CreateRecipe'>Add recipe</Link>
-        <Select 
-          options={ingredientOptions}
-          name='ingredients'
-          isMulti
-          onChange={(selected) => handleMultiSelected(selected, 'ingredients'), handleFilter}
-        />
+        <Link to='/CreateRecipe' className='btn btn-primary mb-4 addRecipeButton'>Add Your Own Recipe</Link>
+        <div className='row justify-content-center mb-4'>
+          <Select 
+            className='col-12 col-md-8 col-lg-8 center'
+            options={ingredientOptions}
+            name='ingredients'
+            isMulti='true'
+            onChange={(selected) => handleMultiSelected(selected, 'ingredients'), handleFilter}
+          />
+        </div>
 
       </div>
       <div className='row g-3'>
