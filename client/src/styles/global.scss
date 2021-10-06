@@ -6,6 +6,16 @@ body{
 site-wrapper{
   height: 100vh;
 }
-
+.orange-button{
+  background-color: #ff7900;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.orange-button:hover{
+  background-color: #47c100;
+}
 
 

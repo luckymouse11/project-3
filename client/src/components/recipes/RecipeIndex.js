@@ -74,7 +74,7 @@ const RecipeIndex = ({ growingTree }) => {
   return (
     <section className='recipe-list container mt-4'>
       <div>
-        <Link to='/CreateRecipe' className='btn btn-primary mb-4 addRecipeButton'>Add Your Own Recipe</Link>
+        <Link to='/CreateRecipe' className='btn btn-primary mb-4 orange-button add-recipe-button'>Add Your Own Recipe</Link>
         <div className='row justify-content-center mb-4'>
           <Select 
             className='col-12 col-md-8 col-lg-8 center'

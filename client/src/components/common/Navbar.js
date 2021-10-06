@@ -28,10 +28,10 @@ const Nav = () => {
             <Link to='/recipes' className='nav-link'>Recipes</Link>
           </li>
           <li className='nav-item m-2'>
-            <Link to='/about' className='nav-link'>About</Link>
+            <Link to='/environmentalfactors'  className='nav-link'>Environmental Factors</Link>
           </li>
           <li className='nav-item m-2'>
-            <Link to='/environmentalfactors'  className='nav-link'>Environmental Factors</Link>
+            <Link to='/about' className='nav-link'>About</Link>
           </li>
           {
             userIsAuthenticated() ?

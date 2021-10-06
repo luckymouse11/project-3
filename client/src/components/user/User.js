@@ -31,25 +31,25 @@ const User = ({ growingTree }) => {
     <>
       { user ? 
         <div className="container mt-4">
-          <h2>{user.username}</h2>
+          <h2>User Profile: {user.username}</h2>
           <hr />
           
-          <h4>Environmental Impact Score</h4>
-          <div className='impact-container d-flex'>
-            <div className='factor-display'>
-              <h5>Carbon Footprint</h5>
+          <h4>{user.username}&apos;s environmental Impact Score</h4>
+          <div className='impact-container d-flex justify-content-center'>
+            <div className='factor-display carbon badge bg-secondary me-1 mb-1'>
+              Carbon Footprint
             </div>
-            <div className='factor-display'>
-              <h5>Land Use</h5>
+            <div className='factor-display land badge bg-secondary me-1 mb-1'>
+              Land Use
             </div>
-            <div className='factor-display'>
-              <h5>Water Pollution</h5>
+            <div className='factor-display pollution badge bg-secondary me-1 mb-1'>
+              Water Pollution
             </div>
-            <div className='factor-display'>
-              <h5>Water Use</h5>
+            <div className='factor-display water badge bg-secondary me-1 mb-1'>
+              Water Use
             </div>
-            <div className='factor-display'>
-              <h5>Freshwater Use</h5>
+            <div className='factor-display waterscarcity badge bg-secondary me-1 mb-1'>
+              Freshwater Use
             </div>
             
           </div>
