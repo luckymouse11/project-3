@@ -20,7 +20,7 @@ const Nav = () => {
     <nav className='navbar navbar-expand-sm navbar-light bg-light justify-content-between bb-3'>
       <div className='container-fluid'>
         <div className="navbar-header">
-          <Link to='/' className='navbar-brand'>Green Plate</Link>
+          <Link to='/' className='navbar-brand'><img src='https://res.cloudinary.com/mesowa/image/upload/v1633551454/Green%20Plate/logo_twyfzc.png' className="navimg"/> </Link>
         </div>
       
         <div className='nav navbar-nav mb-1 mb-lg-0'>
