@@ -48,7 +48,7 @@ export default [
     name: 'Scarcity-Weighted Water Use',
     image: 'https://res.cloudinary.com/mesowa/image/upload/v1633432613/Green%20Plate/Screenshot_2021-10-05_at_12.16.43_vuhbc4.png',
     totalGraph: { scarcityweightedwaterusegraph } ,
-    secondGraphic: 'scarcity-water-graphic-2', //TO FIND
+    secondGraphic: 'https://res.cloudinary.com/mesowa/image/upload/v1633518889/Green%20Plate/what-is-water-scarcity_mzileu.jpg',
     description: 'Water is a precious resource in our planet. Its relative availability—71% of the Earth’s surface is water—has been responsible for a lack of further efforts towards water consumption efficiency. The total amount of water is 1.38×1018 m3. Only 2.6% is freshwater, and out of that, 10% alone is accessible, around 3.7×1015 m3. Water scarcity occurs when water demand exceeds internal water resources. Recently, numerous reports have estimated that by 2025 two-thirds of the population will suffer water scarcity. '
   },
   {

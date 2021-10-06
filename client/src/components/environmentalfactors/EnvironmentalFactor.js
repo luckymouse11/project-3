@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 // import  growingTree from './src/images/growingTree.gif'
 import axios from 'axios'
 
+
+
 const EnvironmentalFactor = () => {
 
   const [ envFactor, setEnvFactor ] = useState(null)
