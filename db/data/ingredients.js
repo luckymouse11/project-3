@@ -1,9 +1,4 @@
 export default [
-  // carbon footprint - 'GHG emissions per kilogram(Poore & Nemecek, 2018)': 
-  // land use -  landUse
-  // water use - waterUse
-  // scarcity-weighted water use - scarcityWeightedWaterUse
-  // water pollution - waterPollution
   {
     ingredient: 'Apples',
     carbonFootprint: 0.43,
