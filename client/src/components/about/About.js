@@ -49,19 +49,47 @@ const About = () => {
           <div className='team-profile-container mt-2 row g-3'>
             <div className='team-profile col-12 col-md-6 col-lg-4' id='Kate'>
               <h4>Kate Westbrook</h4>
-              <img src="#" alt="Kate" />
-              <p>https://github.com/kate-lab</p>
+              <div className='about-profile-pic'>
+                <img src="#" alt="Kate" />
+              </div>
+              <div className='link-pic'>
+                <a href='https://github.com/kate-lab'>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
+                </a>
+                <a>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
+                </a>
+              </div>
             </div>
             <div className='team-profile col-12 col-md-6 col-lg-4' id='Victor'>
               <h4>Victor Liew</h4>
-              <img src="#" alt="Victor" />
-              <p>https://github.com/luckymouse11</p>
+              <div className='about-profile-pic'>
+                <img src='https://res.cloudinary.com/yl/image/upload/v1633555873/IMG_20210718_234843_921_pdxsw3.jpg' alt='Victor' />
+              </div>
+              <div className='link-pic'>
+                <a href='https://github.com/luckymouse11'>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
+                </a>
+                <a>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
+                </a>
+              </div>
             </div>
             <div className='team-profile col-12 col-md-6 col-lg-4' id='Megan'>
               <h4>Megan Sowa</h4>
-              <img src="https://res.cloudinary.com/mesowa/image/upload/v1633519704/Green%20Plate/Screenshot_2021-10-06_at_12.27.59_xhghvl.png" alt="Megan" />
-              <p>https://github.com/mesowa</p>
+              <div className='about-profile-pic'>
+                <img src="https://res.cloudinary.com/mesowa/image/upload/v1633519704/Green%20Plate/Screenshot_2021-10-06_at_12.27.59_xhghvl.png" alt="Megan" />
+              </div>
+              <div className='link-pic'>
+                <a href='https://github.com/mesowa'>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
+                </a>
+                <a>
+                  <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
+                </a>
+              </div>
             </div>
+
           </div>
         </article>
 
