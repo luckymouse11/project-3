@@ -17,6 +17,7 @@ import RecipeShow from './components/recipes/RecipeShow'
 import AddRecipe from './components/auth/AddRecipe'
 
 import EnvironmentalFactor from './components/environmentalfactors/EnvironmentalFactor'
+import AllEnvironmentalFactors from './components/environmentalfactors/AllEnvironmentalFactors'
 import About from './components/about/About'
 
 // Images
@@ -52,7 +53,10 @@ function App() {
           <Route path='/users/:id'>
             <User />
           </Route>
-          <Route path='/environmentalfactor'>
+          <Route path='/environmentalfactors'>
+            <AllEnvironmentalFactors />
+          </Route>
+          <Route path='/environmentalfactors/:id'>
             <EnvironmentalFactor />
           </Route>
           <Route path='/about'>

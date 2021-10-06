@@ -31,7 +31,7 @@ const Nav = () => {
             <Link to='/about' className='nav-link'>About</Link>
           </li>
           <li className='nav-item m-2'>
-            <Link to='/environmentalfactors/'  className='nav-link'>Environmental Factors</Link>
+            <Link to='/environmentalfactors'  className='nav-link'>Environmental Factors</Link>
           </li>
           {
             userIsAuthenticated() ?

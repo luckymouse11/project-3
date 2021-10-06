@@ -12,46 +12,40 @@ const About = () => {
     <section className='about'>
       <div className='container'>
         <article className='article'>
-          <h2>About the Green Plate Project</h2>
-          <p>intro bit</p>
+          <h2>About</h2>
+          <p>How Green is Your Plate is a recipe website with an eco twist. We illustrate the environmental impact of your meal, helping you make greener choices - saving the planet one plate at a time!</p>
         </article>
 
         <article className='article'>
-          <h2>Environmental factors</h2>
-          <p>NOTES TO EDIT--94% of mammal biomass (the total quantity of animals on the planet), excluding humans, is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4 Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them. Food, therefore, lies at the heart of trying to tackle climate change, reducing water stress, pollution, restoring lands back to forests or grasslands, and protecting the world’s wildlife</p>
+          <h2>Environmental Factors</h2>
+          <p>There are 5 main environmental factors to consider when filling up your plate:</p>
           <div className='environmental-factors d-flex'>
             <div className='co2'>
-              <img src='../src/images/about-co2-image.png' alt='co2-image'/>
-              <p>some facts about how co2 levels is influenced by agricultural farming</p>
-              <ul>
-                <li>fact 1</li>
-                <li>fact 2</li>
-                <li>fact 3</li>
-              </ul>
-            </div>
-            <div className='water'>
-              <img src='../images/about-water-image.png' alt='water-image'/>
-              <p>some facts about how co2 levels is influenced by agricultural farming</p>
-              <ul>
-                <li>fact 1</li>
-                <li>fact 2</li>
-                <li>fact 3</li>
-              </ul>
+              <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/co2-image_txzm1d.svg' alt='co2-image'/>
+              <p>Carbon Footprint</p>
             </div>
             <div className='land'>
-              <img src='./images/about-land-image.png' alt='land-image'/>
-              <p>some facts about how co2 levels is influenced by agricultural farming</p>
-              <ul>
-                <li>fact 1</li>
-                <li>fact 2</li>
-                <li>fact 3</li>
-              </ul>
+              <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/land-use_dki2em.png' alt='land-image'/>
+              <p>Land Use</p>
+            </div>
+            <div className='water'>
+              <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432324/Green%20Plate/water-image_seblhm.png' alt='water-image'/>
+              <p>Water Use</p>
+            </div>
+            <div className='water-pollution'>
+              <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432570/Green%20Plate/Screenshot_2021-10-05_at_12.16.00_jf1kjx.png' alt='pollution-image'/>
+              <p>Water Pollution</p>
+            </div>
+            <div className='water-scarcity'>
+              <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432613/Green%20Plate/Screenshot_2021-10-05_at_12.16.43_vuhbc4.png' alt='scarcity-image'/>
+              <p>Water Scarcity</p>
             </div>
           </div>
+          <p>little round up here</p>
         </article>
 
         <article className='article'>
-          <h2>The team</h2>
+          <h2>The Team</h2>
           <div className='team-profile-container mt-2 row g-3'>
             <div className='team-profile col-12 col-md-6 col-lg-4' id='Megan'>
               <h4>Megan Sowa</h4>
