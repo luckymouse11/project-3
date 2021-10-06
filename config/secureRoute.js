@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
+import 'dotenv/config'
 import User from '../models/user.js'
 
-dotenv.config()
+// dotenv.config()
 
 export const secureRoute = async (req, res, next) => {
   try {

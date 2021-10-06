@@ -11,10 +11,11 @@ export const getAllRecipes = async (_rec, res) => {
 // POST /recipes
 // Create a new recipe
 export const createRecipe = async (req, res) => {
+  const currentUser = req.user
   try {
-    console.log('req.currentUser', req.currentUser)
+    console.log('req.currentUser', currentUser)
     console.log('req.body ->', req.body)
-    const recipeWithOwner = { ...req.body, owner: req.currentUser._id }
+    const recipeWithOwner = { ...req.body, owner: currentUser._id }
     console.log('recipeWithOwner', recipeWithOwner)
     const recipeToAdd = await Recipe.create(recipeWithOwner)
     res.status(201).json(recipeToAdd)

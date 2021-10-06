@@ -18,6 +18,7 @@ export const registerUser = async (req, res) => {
 }
 
 export const loginUser = async (req, res) => {
+  console.log(process.env.secret)
   try {
     const userToLogin = await User.findOne({ email: req.body.email })
     console.log('User to login ->', userToLogin)

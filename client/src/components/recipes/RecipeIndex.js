@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'
-// import AsyncSelect from 'react-select/async'
 
 
 // Components
@@ -14,6 +13,7 @@ const RecipeIndex = ({ growingTree }) => {
   const [ recipes, setRecipes ] = useState([])
   const [ hasError, setHasError ] = useState(false)
   const [ ingredients, setIngredients ] = useState([])
+  const [ filteredRecipes, setFilteredRecipes ] = useState([])
 
   const [formData, setFormData] = useState({
     ingredientOptions: [],
@@ -64,21 +64,28 @@ const RecipeIndex = ({ growingTree }) => {
     setFormData({ ...formData, [name]: values })
   }
 
+  const handleFilter = () => {
+    const filteredArray = recipes.filter(recipe => recipe.ingredients.includes(ingredients))
+    setFilteredRecipes(filteredArray)
+    console.log('filteredRecipes ->', filteredRecipes)
+  }
+
+
   return (
     <section className='recipe-list container mt-4'>
       <div>
-        <Link to='/AddRecipe'>Add recipe</Link>
+        <Link to='/CreateRecipe'>Add recipe</Link>
         <Select 
           options={ingredientOptions}
           name='ingredients'
           isMulti
-          onChange={(selected) => handleMultiSelected(selected, 'ingredients')}
+          onChange={(selected) => handleMultiSelected(selected, 'ingredients'), handleFilter}
         />
 
       </div>
       <div className='row g-3'>
         {recipes.length > 0 ?
-          recipes.map( recipe => {
+          (filteredRecipes.length > 0 ? filteredRecipes : recipes).map( recipe => {
             const owner = recipe.owner
             console.log(recipe)
             console.log(owner)
