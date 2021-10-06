@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-// import  growingTree from './src/images/growingTree.gif'
 import axios from 'axios'
-
-
 
 const EnvironmentalFactor = () => {
 
@@ -13,7 +10,7 @@ const EnvironmentalFactor = () => {
   const { id } = useParams
 
   useEffect(() => {
-    const getEnvFactor = async () => {
+    const getSingleFactor = async () => {
       try {
         const { data } = await axios(`api/environmentalfactors/${id}`)
         setEnvFactor(data)
@@ -21,7 +18,7 @@ const EnvironmentalFactor = () => {
         setHasError(true)
       }
     }
-    getEnvFactor()
+    getSingleFactor()
   }, [id])
 
   useEffect(() => console.log(envFactor), [envFactor])
