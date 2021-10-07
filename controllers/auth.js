@@ -18,7 +18,7 @@ export const registerUser = async (req, res) => {
 }
 
 export const loginUser = async (req, res) => {
-  console.log(process.env.secret)
+  // console.log(process.env.secret)
   try {
     const userToLogin = await User.findOne({ email: req.body.email })
     console.log('User to login ->', userToLogin)
@@ -27,7 +27,7 @@ export const loginUser = async (req, res) => {
       throw new Error()
     }
     const token = jwt.sign({ sub: userToLogin._id }, process.env.secret, { expiresIn: '7 days' })
-    console.log('TOKEN ->', token)
+    // console.log('TOKEN ->', token)
     return res.status(200).json({
       message: `Welcome back ${userToLogin.username}`,
       token

@@ -39,10 +39,7 @@ const Nav = () => {
             // if isAuthenticated is true:
               <>
                 <li className='nav-item m-2'>
-                  <Link to={'/profile'} className='nav-link'>Profile</Link>
-                </li>
-                <li className='nav-item m-2'>
-                  <span className='logout-link nav-link' onClick={handleLogout} >Logout</span>
+                  <span className='nav-link logout-link' onClick={handleLogout} >Logout</span>
                 </li>
               </>
 
