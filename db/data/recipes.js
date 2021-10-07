@@ -1,7 +1,7 @@
 export default [
   {
     recipeName: 'Veggie Pie',
-    ingredients: ['Eggs', 'Root Vegetables', 'Wheat & Rye'],
+    ingredients: ['Eggs', 'Root Vegetables', 'Wheat Flour'],
     recipeDescription: 'It’s a double carb love affair – creamy dauphinois potatoes meet moreish, cheese pastry. Serve this knockout veggie pie with simple steamed greens or salad.',
     url: 'https://www.deliciousmagazine.co.uk/recipes/dauphinois-potato-leek-pie/',
     image: 'https://www.deliciousmagazine.co.uk/wp-content/uploads/2021/05/DEL_2021_Q1_POTATO_LEEK_PIE-960-768x960.jpg'

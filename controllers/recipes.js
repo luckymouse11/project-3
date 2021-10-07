@@ -4,7 +4,7 @@ import Recipe from '../models/recipe.js'
 // GET /recipes
 // Return all recipes
 export const getAllRecipes = async (_rec, res) => {
-  const recipes = await Recipe.find()
+  const recipes = await Recipe.find().populate('ingredients')
   console.log('Get Recipes ->', recipes)
   return res.status(200).json(recipes)
 }

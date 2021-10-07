@@ -50,7 +50,7 @@ const About = () => {
             <div className='team-profile col-12 col-md-6 col-lg-4' id='Kate'>
               <h4>Kate Westbrook</h4>
               <div className='about-profile-pic'>
-                <img src="#" alt="Kate" />
+                <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1633606669/54840272_yi1kcf.jpg" alt="Kate" />
               </div>
               <div className='link-pic'>
                 <a href='https://github.com/kate-lab'>

@@ -1,69 +1,72 @@
-// import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+
+// Components
+import EnvironmentalFactorCard from './EnvironmentalFactorCard'
 
 const AllEnvironmentalFactors = () => {
-  
-  return (
-    <section className='envfactors'>
-      <div className='container'>
-  
-        <article className='article'>
-          <h2>Environmental Factors</h2>
-          <p>94% of mammal biomass (the total quantity of animals on the planet), excluding humans, is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4.
-            <br></br>
-            <br></br>
-            Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them. 
-            <br></br>
-            <br></br>
-            Food, therefore, lies at the heart of trying to tackle climate change, reducing water stress, pollution, restoring lands back to forests or grasslands, and protecting the world’s wildlife</p>
-        </article>
-      </div>
 
-      <div className="grid-container">
-        <div className="pos-1"> 
-          <p>How does...</p>
+  // State
+  const [ allEnvFactors, setAllEnvFactors ] = useState([])
+  const [ hasError, setHasError ] = useState(false)
+
+  useEffect(() => {
+
+    const getAllEnvFactors = async () => {
+      try {
+        const { data } = await axios('/api/environmentalfactors')
+        setAllEnvFactors(data)
+        console.log('allEnvFactors ->', data)
+        console.log(data)
+      } catch (err) {
+        setHasError(true)
+      }
+    }
+    getAllEnvFactors()
+  }, [])
+
+  return (
+    <>
+      <section className='envfactors'>
+        <div className='container'>
+
+          <article className='article'>
+            <h3>Why do we need to think about the environment when we choose ingredients?</h3>
+            <p>94% of mammal biomass (the total quantity of animals on the planet), excluding humans, is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4.</p>
+            <p>Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them.</p>
+            <p>Food, therefore, lies at the heart of trying to tackle climate change, reducing water stress, pollution, restoring lands back to forests or grasslands, and protecting the world’s wildlife</p>
+          </article>
         </div>
-        <div className="pos-2">
-          <h5>Carbon Footprint</h5>
-          <Link to={'/environmentalfactors/615db6b19c570c19e2d806db'}>
-            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/co2-image_txzm1d.svg'/></Link>
+      </section>
+      <section className="envfactors-list container mt-4">
+        <h3>Environmental Factors</h3>
+        <div className="envfactors-container grid-container">
+  
+          {allEnvFactors.length > 0 ?
+  
+            allEnvFactors.map( envFactor => {
+              console.log(envFactor)
+              return <EnvironmentalFactorCard key={envFactor._id} {...envFactor} />
+            })
+  
+            :
+  
+            <>
+              {hasError ? 
+                <h2 className="display-5 text-center">Uh oh... something went wrong!</h2> 
+                : 
+                <p>Error</p>
+              }
+            </>
+        
+          }
+  
         </div>
-        <div className="pos-3">
-          <h5>Land Use</h5>
-          <Link to={'/environmentalfactors/615db6b19c570c19e2d806dc'}>
-            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432484/Green%20Plate/land-use_dki2em.png'/></Link>
-        </div>
-        <div className="pos-4">
-          <h5>Water Use</h5>
-          <Link to={'/environmentalfactors/615db6b19c570c19e2d806dd'}>
-            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432324/Green%20Plate/water-image_seblhm.png'/></Link>
-        </div>
-        <div className="pos-5">
-          <h5>Water Pollution</h5>
-          <Link to={'/environmentalfactors/615db6b19c570c19e2d806df'}>
-            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432570/Green%20Plate/Screenshot_2021-10-05_at_12.16.00_jf1kjx.png'/></Link>
-        </div>
-        <div className="pos-6">
-          <h5>Water Scarcity</h5>
-          <Link to={'/environmentalfactors/615db6b19c570c19e2d806de'}>
-            <img src='https://res.cloudinary.com/mesowa/image/upload/v1633432613/Green%20Plate/Screenshot_2021-10-05_at_12.16.43_vuhbc4.png'/></Link>
-        </div>
-        <div className="pos-7">
-          <p>affect the planet?</p>
-        </div>
-      </div>  
-      <>
-      </>
-    </section>
+      </section>
+    </>
   )
+
+
 }
 
 export default AllEnvironmentalFactors
-
-{/* {hasError ? 
-            <h5 className="display-5 text-center">Uh oh... Something went wrong</h5> 
-            : 
-            <img className="growingTree" src={ growingTree } alt="GrowingTree gif" />
-          } */}
-

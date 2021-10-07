@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema({
 
 const recipeSchema = new mongoose.Schema({
   recipeName: { type: String, required: true, maxlength: 50 },
-  ingredients: [{ type: String, required: true }],
+  ingredients: [{ type: mongoose.Schema.ObjectId, ref: 'Ingredient' }],
   recipeDescription: { type: String, required: true, maxlength: 1000 },
   url: { type: String },
   image: { type: String, required: true },
