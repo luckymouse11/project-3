@@ -45,14 +45,23 @@ const RecipeShow = ({ growingTree }) => {
               <div className ='environmental-impact text-center'>
                 <h2>Environmental Impact</h2>
                 <div className='factors d-flex justify-content-between'>
-                  <div className ='CO2'></div>
-                  <div className ='Water'>Water</div>
-                  <div className ='Land'>Land</div>
+                  <div className ='CO2'>
+                    Carbon Footprint
+                    <p>{recipe.ingredients.reduce((total,ingredient) => total += ingredient.carbonFootprint, 0)}</p>
+                  </div>
+                  <div className ='Water'>
+                    Water Usage
+                    <p>{recipe.ingredients.reduce((total,ingredient) => total += ingredient.waterUse, 0)}</p>
+                  </div>
+                  <div className ='Land'>
+                    Land Use
+                    <p>{recipe.ingredients.reduce((total,ingredient) => total += ingredient.landUse, 0)}</p>
+                  </div>
                 </div>
                 <hr />
               </div>
-              <h4><span>🍽</span> </h4>
-              INGREDIENTS
+              <h4><span>🍽</span> Key Ingredients</h4>
+              {recipe.ingredients.map(ingredient => <li key={ingredient._id}>{ingredient.ingredient}</li>)}
               <hr />
               <h4><span>🌍</span> Link to full recipe instructions</h4>
               <p>This recipe is from: <a href={recipe.url}>{recipe.url}</a></p>
