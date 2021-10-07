@@ -56,7 +56,7 @@ const About = () => {
                 <a href='https://github.com/kate-lab'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/katewestbrook/'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
                 </a>
               </div>
@@ -70,7 +70,7 @@ const About = () => {
                 <a href='https://github.com/luckymouse11'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/liewvictor/'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
                 </a>
               </div>
@@ -84,7 +84,7 @@ const About = () => {
                 <a href='https://github.com/mesowa'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633551817/github_duwsnq.png' alt='GitHub'/>
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/megan-sowa-82a233215/'>
                   <img src='https://res.cloudinary.com/yl/image/upload/v1633553148/linkedin_fir0qe.png' alt='LinkedIn'/>
                 </a>
               </div>
