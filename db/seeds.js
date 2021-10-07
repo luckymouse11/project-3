@@ -25,11 +25,10 @@ const seedDatabase = async () => {
 
     // Environmental Factors
     await EnvironmentalFactor.create(environmentalFactorData)
-    console.log(environmentalFactorData)
+
 
     // Ingredients
-    await Ingredient.create(ingredientData)
-    console.log(ingredientData)
+    const ingredients = await Ingredient.create(ingredientData)
 
     // Create users
     const users = await User.create(userData)
@@ -37,9 +36,19 @@ const seedDatabase = async () => {
 
     // Create new recipe array with owners populated
     const recipesWithOwner = recipeData.map(recipe => {
+      recipe.ingredients = recipe.ingredients.map(i => {
+        const filteredIngredients = ingredients.filter(f => {
+          return f.ingredient === i
+        } )
+        console.log(filteredIngredients)
+        return filteredIngredients[0]._id
+
+      })
       recipe.owner = users[0]._id
+      console.log(recipe)
       return recipe
     })
+    
 
     // Create recipe
     const recipes = await Recipe.create(recipesWithOwner)

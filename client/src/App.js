@@ -18,6 +18,7 @@ import CreateRecipe from './components/auth/CreateRecipe'
 
 import EnvironmentalFactor from './components/environmentalfactors/EnvironmentalFactor'
 import AllEnvironmentalFactors from './components/environmentalfactors/AllEnvironmentalFactors'
+
 import About from './components/about/About'
 
 // Images

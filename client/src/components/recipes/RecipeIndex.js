@@ -15,9 +15,9 @@ const RecipeIndex = ({ growingTree }) => {
   const [ ingredients, setIngredients ] = useState([])
   const [ filteredRecipes, setFilteredRecipes ] = useState([])
 
-  const [formData, setFormData] = useState({
-    ingredientOptions: [],
-  })
+  // const [formData, setFormData] = useState({
+  //   ingredientOptions: [],
+  // })
 
 
 
@@ -35,8 +35,9 @@ const RecipeIndex = ({ growingTree }) => {
   }, [])
 
   const ingredientOptions = ingredients.map(ingredient => (
-    { 'value': ingredient.id, 'label': ingredient.ingredient }
+    { value: ingredient.ingredient, label: ingredient.ingredient, id: ingredient._id }
   ))
+  
 
 
 
@@ -58,17 +59,26 @@ const RecipeIndex = ({ growingTree }) => {
   //   setFormData(newObj)
   // }
 
-  const handleMultiSelected = (selected, name) => {
-    console.log('selected ->', selected)
+  const handleMultiSelected = (selected) => {
+    // console.log('selected ->', selected)
     const values = selected ? selected.map(item => item.value) : []
-    setFormData({ ...formData, [name]: values })
+    
+    const filtered = recipes.filter(recipe => {
+  
+      return recipe.ingredients.some(ingredient => {
+        console.log(ingredient)
+        return values.includes(ingredient.ingredient)
+      
+      })
+    })
+    values.length > 0 ? setFilteredRecipes(filtered) : setFilteredRecipes([])
   }
 
-  const handleFilter = () => {
-    const filteredArray = recipes.filter(recipe => recipe.ingredients.includes(ingredients))
-    setFilteredRecipes(filteredArray)
-    console.log('filteredRecipes ->', filteredRecipes)
-  }
+  // const handleFilter = () => {
+  //   const filteredArray = recipes.filter(recipe => recipe.ingredients.includes(ingredients))
+  //   setFilteredRecipes(filteredArray)
+  //   console.log('filteredRecipes ->', filteredRecipes)
+  // }
 
 
   return (
@@ -81,7 +91,7 @@ const RecipeIndex = ({ growingTree }) => {
             options={ingredientOptions}
             name='ingredients'
             isMulti='true'
-            onChange={(selected) => handleMultiSelected(selected, 'ingredients'), handleFilter}
+            onChange={(selected) => handleMultiSelected(selected)}
           />
         </div>
 
