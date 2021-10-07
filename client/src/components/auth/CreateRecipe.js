@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { userIsAuthenticated } from '../helpers/Auth.js'
 import Select from 'react-select'
-import ImageUpload from '../helpers/ImageUpload.js'
+import 'dotenv/config'
 
 
 const CreateRecipe = () => {
@@ -25,7 +25,7 @@ const CreateRecipe = () => {
   }, [])
 
   const ingredientOptions = ingredients.map(ingredient => (
-    { 'value': ingredient.id, 'label': ingredient.ingredient }
+    { value: ingredient.ingredient, label: ingredient.ingredient, id: ingredient._id }
   ))
 
   const [formData, setFormData] = useState({
@@ -35,14 +35,34 @@ const CreateRecipe = () => {
     url: '',
     image: '',
   })
+  
+  const handleMultiSelected = (selected) => {
+    console.log('selected ->', selected)
+    const selectedIngredients = selected ? selected.map(item => item.value) : []
+    console.log(selectedIngredients)
+    setFormData({ ...formData, ingredients: selected })
+  }
 
-  const handleChange = (event)=>{
-    const newObj = { ...formData, [event.target.name]: event.target.value }
-    setFormData(newObj)
+  const handleImageChange = async (e) => {
+    const dataToSend = new FormData()
+    dataToSend.append('file', e.target.files[0])
+    dataToSend.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
+    const { data } = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, dataToSend)
+    setFormData({ ...formData, image: data.url })
+  }
+  const handleNameChange = (event ) => {
+    setFormData({ ...formData, recipeName: event.target.value })
+  }
+  const handleDescriptionChange = (event) => {
+    setFormData({  ...formData, recipeDescription: event.target.value })
+  }
+  const handleUrlChange = (event) => {
+    setFormData({  ...formData, url: event.target.value })
   }
 
   const handleSubmit = async(event)=>{
     event.preventDefault()
+    console.log(formData)
     try {
       const { data } = await axios.post('/api/recipes', formData)
       console.log(data)
@@ -50,15 +70,6 @@ const CreateRecipe = () => {
     } catch (err) {
       console.log(err)
     }
-  }
-  const handleMultiSelected = (selected, name) => {
-    console.log('selected ->', selected)
-    const values = selected ? selected.map(item => item.value) : []
-    setFormData({ ...formData, [name]: values })
-  }
-
-  const handleImageUrl = (url) => {
-    setFormData({ ...formData, image: url })
   }
 
   return (
@@ -72,26 +83,22 @@ const CreateRecipe = () => {
               <form onSubmit={handleSubmit} className='form-field createrecipe flex-column align-items-center'>
                 <h2>Add New Recipe</h2>
                 <label htmlFor='recipe-name' className='form-label'>Recipe Name</label>
-                <input type='text' className='form-control' name='recipeName' placeholder='Apple Pie' value ={FormData.recipeName} onInput={handleChange}/>
-                <label htmlFor='ingredients' className='form-label'>Ingredients</label>
+                <input type='text' className='form-control' name='recipeName' placeholder='Apple Pie' value ={FormData.recipeName} onChange ={handleNameChange}/>
+                <label htmlFor='ingredients' className='form-label'>Ingredients included in recipe</label>
                 <Select
                   options={ingredientOptions}
                   name='ingredients'
                   isMulti
-                  onChange={(selected) => {
-                    handleMultiSelected(selected, 'ingredients')
-                  }}
+                  onChange={(selected) => handleMultiSelected(selected)}
                 />
                 <label htmlFor='description' className='form-label'>Recipe Description</label>
-                <input type='textarea' className='form-control' name='recipeDescription' placeholder='Write a description of your recipe here or a short version of the recipe' value ={FormData.recipeDescription} onInput={handleChange}/>
+                <input type='textarea' className='form-control' name='recipeDescription' placeholder='Write a description of your recipe here or a short version of the recipe' value ={FormData.recipeDescription} onChange ={handleDescriptionChange}/>
                 <label htmlFor='url' className='form-label'>Link to Full Recipe</label>
-                <input type='text' className='form-control' name='url' placeholder='www.applepie.com' value ={FormData.url} onInput={handleChange}/>
-                <label htmlFor='image' className='form-label'>Image</label>
-                <div className='field'>
-                  <ImageUpload value={formData.image} name='image' handleImageUrl={handleImageUrl}/>
-                </div>
+                <input type='text' className='form-control' name='url' placeholder='www.applepie.com' value ={FormData.url} onChange ={handleUrlChange}/>
+                <input type="file" name='image' className='input' onChange={handleImageChange} />
+                
 
-                <button className='submit btn'>Add Recipe</button>
+                <button className='submit btn btn-primary orange-button'>Add Recipe</button>
               </form>
             </div>
             

@@ -4,11 +4,7 @@ import axios from 'axios'
 
 const ImageUpload = ({ name, handleImageUrl }) => {
 
-  const url = process.env.REACT_APP_CLOUDINARY_URL
-  const preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
-  console.log(url, preset)
-
-  const handleChange = async (e) => {
+  const handleImageChange = async (e) => {
     const dataToSend = new FormData()
     dataToSend.append('file', e.target.files[0])
     dataToSend.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
@@ -19,7 +15,7 @@ const ImageUpload = ({ name, handleImageUrl }) => {
   return (
     <>
       <label htmlFor={name}>Recipe Image</label>
-      <input type="file" name={name} className="input" onChange={handleChange} />
+      <input type="file" name={name} className="input" onChange={handleImageChange} />
     </>
   )
 }
