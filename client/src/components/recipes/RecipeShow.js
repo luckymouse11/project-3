@@ -38,7 +38,7 @@ const RecipeShow = ({ growingTree }) => {
           <h2>{recipe.recipeName}</h2>
           <hr />
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-12 col-md-6'>
               <img src={recipe.image} alt={recipe.name} className='col-12'/>
             </div>
             <div className='col-12 col-md-6'>
