@@ -1,6 +1,6 @@
 import EnvironmentalFactor from '../models/environmentalFactor.js'
 
-export const getAllFactors = async (req, res) => {
+export const getAllFactors = async (_req, res) => {
   const factors = await EnvironmentalFactor.find()
   console.log('Get Factors ->', factors)
   return res.status(200).json(factors)

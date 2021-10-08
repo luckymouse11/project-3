@@ -1,8 +1,11 @@
+//cheeseCard
+
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-const EnvironmentalFactorCard = ({  name, image, _id }) => {
-
+const EnvironmentalFactorCard = ({   _id , name, image }) => {
+  const params = useParams()
+  console.log(params, 'params message')
   return (
     <Link to={`/environmentalfactors/${_id}`}>
       <div className='env-factor-card'>

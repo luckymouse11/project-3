@@ -23,6 +23,7 @@ import About from './components/about/About'
 
 // Images
 import growingTree from './images/growingTree.gif'
+import EnvironmentalFactorCard from './components/environmentalfactors/EnvironmentalFactorCard'
 
 function App() {
   return (
@@ -54,7 +55,7 @@ function App() {
           <Route path='/users/:id'>
             <User />
           </Route>
-          <Route path='/environmentalfactors'>
+          <Route exact path='/environmentalfactors'>
             <AllEnvironmentalFactors />
           </Route>
           <Route path='/environmentalfactors/:id'>

@@ -17,7 +17,6 @@ const AllEnvironmentalFactors = () => {
         const { data } = await axios('/api/environmentalfactors')
         setAllEnvFactors(data)
         console.log('allEnvFactors ->', data)
-        console.log(data)
       } catch (err) {
         setHasError(true)
       }
