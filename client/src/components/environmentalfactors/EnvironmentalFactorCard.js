@@ -7,14 +7,16 @@ const EnvironmentalFactorCard = ({   _id , name, image }) => {
   const params = useParams()
   console.log(params, 'params message')
   return (
-    <Link to={`/environmentalfactors/${_id}`}>
-      <div className='env-factor-card'>
-        <div className='env-factor-card-title'>
-          <h5>{name}</h5>
+    <div className='col-12 col-md-6 col-lg-4 d-flex justify-content-around'>
+      <Link to={`/environmentalfactors/${_id}`}>
+        <div className='env-factor-card'>
+          <div className='env-factor-card-title'>
+            <h5>{name}</h5>
+          </div>
+          <img src={image} alt={name} className='envfactor-card-image card-image w-100'></img>
         </div>
-        <img src={image} alt={name} className='envfactor-card-image'></img>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }
 export default EnvironmentalFactorCard
