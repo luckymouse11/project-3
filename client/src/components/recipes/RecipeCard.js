@@ -8,15 +8,13 @@ const RecipeCard = ({ _id, recipeName, image, ingredients }) => {
       
       <div className='card h-100 text-center'>
         <div className='card-header'>
-          <h5>{recipeName}</h5>
+          <h5 className='mt-2'>{recipeName}</h5>
         </div>
         <img src={image} alt={recipeName} className='card-image'></img>
-        <div className='card-text'>
-          <p>
-            Carbon Footprint: 
-            {ingredients.carbonFootprint}
-          </p>
-          <Link to={`/recipes/${_id}`} className='btn btn-primary card-button mb-2'>View {recipeName} recipe</Link>
+        <div className='card-text p-2'>
+          <div> Carbon Footprint: {ingredients.reduce((total,ingredient) => total += ingredient.carbonFootprint, 0)}</div>
+          <div>Water Usage: {ingredients.reduce((total,ingredient) => total += ingredient.waterUse, 0)}</div>
+          <Link to={`/recipes/${_id}`} className='btn btn-primary card-button mb-3 mt-2'>View {recipeName} recipe</Link>
         </div>
       </div>
   
