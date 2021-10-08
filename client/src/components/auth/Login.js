@@ -35,22 +35,23 @@ const Login = () => {
   
 
   return (
-    <div className='container full-height'>
-      <div className='form-container row justify-content-center'>
-        <div className='col col col-lg-6 col-md-7 col-sm-11'>
-          <form onSubmit={handleSubmit} className='form-field login flex-column align-items-center'>
+    <section className='form-page'>
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <form onSubmit={handleSubmit} className='col-10 col-md-6 mt-4'>
             <h2>Log in</h2>
-            <label htmlFor='email' className='form-label'>Email</label>
-            <input type='text' className='form-control' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
+            <div className='form-field'>
+              <label htmlFor='email' className='form-label'>Email</label>
+              <input type='text' className='form-control' name='email' placeholder='name@email.com' value ={FormData.email} onInput={handleChange}/>
+            </div>
             <label htmlFor='password' className='form-label'>Password</label>
             <input type='text' className='form-control' name='password' placeholder='Password' value ={FormData.password} onInput={handleChange}/>
-            <button className='submit btn'>Log in</button>
+            <button className='submit btn btn-primary'>Log in</button>
             <p>Don&apos;t have an account? <Link to='/register'>Register here</Link></p>
           </form>
         </div>
-        
       </div>
-    </div>
+    </section>
     
   )
 }
