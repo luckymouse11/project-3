@@ -29,7 +29,7 @@ const AllEnvironmentalFactors = () => {
       <section className='envfactors'>
         <div className='container'>
 
-          <article className='article'>
+          <article className='article mt-4'>
             <h3>Why do we need to think about the environment when we choose ingredients?</h3>
             <p>94% of mammal biomass (the total quantity of animals on the planet), excluding humans, is livestock. This means livestock outweigh wild mammals by a factor of 15-to-1.4.</p>
             <p>Of the 28,000 species evaluated to be threatened with extinction on the IUCN Red List, agriculture and aquaculture is listed as a threat for 24,000 of them.</p>
@@ -39,7 +39,7 @@ const AllEnvironmentalFactors = () => {
       </section>
       <section className="envfactors-list container mt-4">
         <h3>Environmental Factors</h3>
-        <div className="envfactors-container grid-container">
+        <div className="envfactors-container grid-container mt-4">
   
           {allEnvFactors.length > 0 ?
   
