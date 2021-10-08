@@ -54,11 +54,6 @@ const RecipeIndex = ({ growingTree }) => {
     getRecipes()
   }, [])
 
-  // const handleChange = (event)=>{
-  //   const newObj = { ...formData, [event.target.name]: event.target.value }
-  //   setFormData(newObj)
-  // }
-
   const handleMultiSelected = (selected) => {
     // console.log('selected ->', selected)
     const values = selected ? selected.map(item => item.value) : []
@@ -74,27 +69,22 @@ const RecipeIndex = ({ growingTree }) => {
     values.length > 0 ? setFilteredRecipes(filtered) : setFilteredRecipes([])
   }
 
-  // const handleFilter = () => {
-  //   const filteredArray = recipes.filter(recipe => recipe.ingredients.includes(ingredients))
-  //   setFilteredRecipes(filteredArray)
-  //   console.log('filteredRecipes ->', filteredRecipes)
-  // }
-
-
   return (
     <section className='recipe-list container mt-4'>
       <div>
-        <Link to='/CreateRecipe' className='btn btn-primary mb-4 orange-button add-recipe-button'>Add Your Own Recipe</Link>
+        
         <div className='row justify-content-center mb-4'>
+          <h3>Find recipes by ingredient:</h3>
           <Select 
             className='col-12 col-md-8 col-lg-8 center'
             options={ingredientOptions}
             name='ingredients'
             isMulti='true'
+            placeholder='What ingredients do you have?'
             onChange={(selected) => handleMultiSelected(selected)}
           />
         </div>
-
+        <Link to='/CreateRecipe' className='btn btn-primary mb-4 orange-button add-recipe-button'>Add Your Own Recipe</Link>
       </div>
       <div className='row g-3'>
         {recipes.length > 0 ?

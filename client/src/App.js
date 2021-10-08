@@ -9,7 +9,6 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 
 import User from './components/user/User'
-import MyProfile from './components/user/MyProfile'
 
 import RecipeIndex from './components/recipes/RecipeIndex'
 import RecipeShow from './components/recipes/RecipeShow'
@@ -48,9 +47,6 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login />
-          </Route>
-          <Route path='/profile'>
-            <MyProfile growingTree={growingTree}/>
           </Route>
           <Route path='/users/:id'>
             <User />
