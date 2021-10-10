@@ -1,31 +1,18 @@
-.form-page{
-  flex-grow: 1;
-  form{
-    display: block;
-    box-shadow: 5px, 10px, lightgrey;
-    border: 2px, solid, lightgrey;
-    border-radius: 8px;
+.form-container{
+  margin-top: 20px;
+  .form-field {
+    
     h2{
       margin: 20px auto
     }
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-      input{
-        border-radius: 0;
-        margin-bottom: 12px;
-      }
+    input{
+      border-radius: 0;
+      margin-bottom: 12px;
     }
-    button {
-      background-color: #40a300;
-      border: none;
-      color: white;
-      margin-bottom: 8px;
-      margin-top: 12px;
-    }
-    button:hover{
-      background-color: #47c100;
+    .form-label{
+      margin-top: 8px;
+      font-weight: 300;
+      text-align: left;
     }
   }
 }
