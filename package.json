@@ -9,6 +9,7 @@
     "start": "node index.js",
     "serve": "npx nodemon index.js",
     "seed": "node db/seeds.js",
+    "heroku-prebuild": "yarn install --production=false",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "type": "module",
