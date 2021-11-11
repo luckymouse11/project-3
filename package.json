@@ -6,9 +6,9 @@
   "author": "Victor Liew <victorliew0711@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "serve": "npx nodemon index.js",
     "seed": "node db/seeds.js",
-    "start": "node index.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "type": "module",
