@@ -16,7 +16,7 @@ const User = ({ growingTree }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const { data } = await axios(`/api/users/${id}`)
+        const { data } = await axios(`/api/users/${id}/`)
         setUser(data)
       } catch (err) {
         setHasError(true)

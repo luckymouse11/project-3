@@ -3,6 +3,12 @@ import mongoose from 'mongoose'
 import 'dotenv/config'
 import router from './config/router.js'
 
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 // Node setup
 const app = express()
 
@@ -17,6 +23,14 @@ const startServer =  async () => {
 
     // Router middleware
     app.use('/api', router)
+
+    // ** New lines **
+    app.use(express.static(path.join(__dirname, 'client', 'build')))
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
+
 
     // Log every request
     app.use((req, _res, next) => {

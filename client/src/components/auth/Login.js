@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async(event)=>{
     event.preventDefault()
     try {
-      const { data } = await axios.post('/api/login', formData)
+      const { data } = await axios.post('/api/login/', formData)
       setTokenToLocalStorage(data.token)
       history.push('/recipes')
     } catch (err) {

@@ -17,7 +17,7 @@ const RecipeShow = ({ growingTree }) => {
   useEffect(() => {
     const getRecipe = async () => {
       try {
-        const { data } = await axios(`/api/recipes/${id}`)
+        const { data } = await axios(`/api/recipes/${id}/`)
         setRecipe(data)
       } catch (err) {
         setHasError(true)

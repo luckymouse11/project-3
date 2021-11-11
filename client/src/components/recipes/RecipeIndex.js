@@ -24,7 +24,7 @@ const RecipeIndex = ({ growingTree }) => {
   useEffect(() => {
     const getIngredients = async () => {
       try {
-        const { data } = await axios('/api/ingredients')
+        const { data } = await axios('/api/ingredients/')
         setIngredients(data)
         console.log('setIngredients ->', data)
       } catch (err) {
@@ -44,7 +44,7 @@ const RecipeIndex = ({ growingTree }) => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const { data } = await axios('/api/recipes')
+        const { data } = await axios('/api/recipes/')
         setRecipes(data)
         console.log(data)
       } catch (err) {

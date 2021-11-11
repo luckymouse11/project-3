@@ -13,7 +13,7 @@ const EnvironmentalFactor = () => {
     const getSingleFactor = async () => {
       try {
         console.log('hellooooo', id)
-        const { data } = await axios(`/api/environmentalfactors/${id}`)
+        const { data } = await axios(`/api/environmentalfactors/${id}/`)
         setEnvFactor(data)
       } catch (err) {
         setHasError(true)
