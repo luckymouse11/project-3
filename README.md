@@ -8,6 +8,7 @@ The third project of GA's Software Engineering Course, a group project to create
 
 The app has been deployed using Heroku and can be viewed <a href="https://greenplate.herokuapp.com/" target="_blank">here</a>
 
+<img width="1099" alt="p3-homepage" src="https://user-images.githubusercontent.com/88091835/143508169-21d7c0c3-f3da-4f93-b37f-f3ae4c016fca.png">
 
 ## Brief
 
