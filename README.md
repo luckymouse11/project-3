@@ -52,7 +52,7 @@ Individual recipe page that displays the total envrionmental impact of each fact
 <img width="925" alt="p3-recipeshow" src="https://user-images.githubusercontent.com/88091835/143427365-5be5c172-d1fe-42f9-a5f9-3168f1606b04.png">
 
 ### Add a Recipe
-Where users can add their own recipes using a form. They can select from a number of key ingredients that will in turn show the total environmental impact as a recipe.
+Where users can add their own recipes using a form. They can select from a number of key ingredients that will in turn show the total environmental impact of a recipe.
 
 <img width="466" alt="p3-addrecipe" src="https://user-images.githubusercontent.com/88091835/143428692-1590da6e-9c4d-4e9c-98eb-b14ed39e960b.png">
 
@@ -84,7 +84,7 @@ As this information was to be seeded I had to keep communicating with Kate and M
 <img width="415" alt="p3-multiselect2" src="https://user-images.githubusercontent.com/88091835/143438014-b55f72da-11c0-4593-8b4f-785019af2fc0.png">
 
 
-Once this was done it was then possible to create a maths function to display the environmental impact as a figure.
+Once this was done it was then possible to create a function to display the environmental impact as a figure.
  
 <img width="952" alt="p3-envimpactmath" src="https://user-images.githubusercontent.com/88091835/143427267-9155f8cd-1aae-4653-a80e-50564c1a700b.png">
 
