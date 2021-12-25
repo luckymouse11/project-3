@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project 3 - How Green is Your Plate
 
 <img width="444" alt="greenplate-logo" src="https://user-images.githubusercontent.com/88091835/143428748-43d2b2ac-1a69-49f0-9223-4757d9fe8cdb.png">
@@ -129,4 +130,6 @@ I’m happy with what was achieved through this project. Taking on a unique idea
 - The importance of good communication; thankfully, as a team, we stayed in constant communication and always made ourselves available whenever we needed to discuss issues we were facing whether code or Git related.
 - Having a clear plan and setting targets helped the efficiency of the project and gave us a good idea of if we were on track to completing our minimal viable product (MVP).
 - Project management, making sure we kept focus on our respective responsibilities with regards to an MVP.
+=======
+>>>>>>> 849a945e6a8f11c3ee92a1c597088bf81455a3b3
 

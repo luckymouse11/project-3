@@ -16,7 +16,7 @@ const MyProfile = ({ growingTree }) => {
     const getMyProfile = async () => {
       
       try {
-        const { data } = await axios.get('/api/profile')
+        const { data } = await axios.get('/api/profile/')
         setMyProfile(data)
         console.log(data)
       } catch (err) {

@@ -15,7 +15,7 @@ const CreateRecipe = () => {
   useEffect(() => {
     const getIngredients = async () => {
       try {
-        const { data } = await axios('/api/ingredients')
+        const { data } = await axios('/api/ingredients/')
         setIngredients(data)
       } catch (err) {
         console.log(err)
@@ -79,7 +79,7 @@ const CreateRecipe = () => {
     console.log(formData)
     try {
       const { data } = await axios.post(
-        '/api/recipes', 
+        '/api/recipes/', 
         formData,
         { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } })
       console.log(data)
